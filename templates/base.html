@@ -1,0 +1,56 @@
+<!-- template for other sites -->
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            {%block title%}
+        
+            {%endblock title%}
+        </title>
+
+        <meta charset="UTF-8">
+        <meta name="description" content="To Infinity and Beyond">
+        <meta name="keywords" content="Donation, Funds, Uphaar">
+        <meta name="author" content="Avishrant Sharma, Prateek Thakur">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="{%static 'stylesheet/basestyle.css'%}">
+        
+        <!-- Path to manifest.json -->
+        <link rel="manifest" href="/manifest.json">
+
+        <!-- Icons for Apple Devices -->
+        <link rel="apple-touch-icon" href="/static/images/icons/avatar.png" sizes="512x512">
+        <meta name="theme-color" content="#0A0302">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="Uphaar">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <!-- Service Worker Registration -->
+        <script type="text/javascript">
+
+            // Initialize the service worker
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/serviceworker.js').then(function (registration) {
+                    // Registration was successful
+                    console.log('django-progressive-web-app: ServiceWorker registration successful');
+                }, function (err) {
+                    // registration failed :(
+                    console.log('django-progressive-web-app: ServiceWorker registration failed: ', err);
+                });
+            }
+
+        </script>
+        {%block link%}
+
+        {%endblock link%}
+        
+    </head>
+
+    <body>
+        {%block content%}
+        
+        {%endblock content%}
+                
+      
+    </body>
+</html>

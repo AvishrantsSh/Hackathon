@@ -1,0 +1,19 @@
+{
+    "name": "Test",
+    "short_name": "chhotaTest",
+    "start_url": "/",
+    "scope": ".",
+    "display": "standalone",
+    "background_color": "#FFF",
+    "theme_color": "#493174",
+    "description": "Application for Test Site",
+    "dir": "ltr",
+    "lang": "en-US",
+    "orientation": "portrait-primary",
+    "icons": [{
+        "src": "/static/images/icons/avatar.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable any"
+    }]
+}

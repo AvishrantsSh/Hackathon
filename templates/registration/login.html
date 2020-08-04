@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block link%}
+    <link rel="stylesheet" href="{%static 'stylesheet/loginstyle.css'%}" media="print" onload="this.media='all'">
+
+{%endblock link%}
+
+{%block content%}
+    <div class="boxcontainer">
+        <div class="loginbox">
+            <div class="loginhead">
+                <b>Login</b>
+            </div>
+            <div class="loginform">
+                <form method="post" style="color: black;">
+                
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <p>
+                                {{ field.label_tag }}<br>
+                                {{ field }}
+                            </p>                                
+                        {% endfor %}
+                        <button id="loginbtn" type="submit">Login</button>
+
+                        {% if form.errors %}
+                            <p style="color: red; text-align: center; margin: 0;">Invalid Login Credentials</p>
+                        {% endif %}
+                
+                </form>
+            </div>
+        </div>
+    </div>
+            
+{%endblock content%}
