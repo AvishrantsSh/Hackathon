@@ -7,14 +7,13 @@ import json
 @csrf_exempt
 def newdt(request):
     if request.method == 'POST':
-        tmp = request.POST
-        if tmp['h_name'] and tmp['age'] and tmp['action']:
-            new_record = Hospital_Records.objects.get(name=tmp['h_name'])
+        if request.POST['h_name'] and request.POST['age'] and request.POST['action']:
+            new_record = Hospital_Records.objects.get(name=request.POST['h_name'])
             new_record.available -= 1
             new_record.save()
 
             # Age Stuff
-            age = Age_Freq.objects.get(age=tmp['age'])
+            age = Age_Freq.objects.get(age=request.POST['age'])
             age.frequency += 1
             age.save()
             return HttpResponse("Nice Boi")
