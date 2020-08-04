@@ -1,5 +1,4 @@
 django
-postgresql
 gunicorn
 django-heroku
 
