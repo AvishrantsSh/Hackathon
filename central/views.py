@@ -21,6 +21,6 @@ def newdt(request):
         #         return HttpResponse("Nice Boi")
         # except:    
         #     return HttpResponse("I Ka Bhej Diye Ho")               
-        return HttpResponse(str(request.body)+" ye mila mujhe")
+        return HttpResponse(str(request.body)+" ye mila mujhe" + str(type(request.body)))
     return HttpResponse("Lag Gaye")
 # Create your views here.
