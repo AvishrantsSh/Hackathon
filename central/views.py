@@ -32,6 +32,7 @@ def random_gen(request):
             
         for i in range(1000):
             Records.objects.create(age=random.randrange(18,78), medical_history=",".join([random.choice(['0','1']) for k in range(7)]), status=random.choice(["Admitted","Released","Death"]))
+        
         return HttpResponseRedirect('')
 
     return HttpResponse('home')
