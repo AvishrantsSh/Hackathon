@@ -9,12 +9,12 @@ def newdt(request):
     if request.method == 'POST':
         # try:
         data = json.loads(request.body.decode("utf-8"))
-        # if data['h_name'] and data['age'] and data['action']:
-        #     new_record = Hospital_Records.objects.get(name=data['h_name'])
-        #     new_record.address = data['action']
-        #     new_record.available -= 1
-        #     new_record.total += 1
-        #     new_record.save()
+        if data['h_name'] and data['age'] and data['action']:
+            new_record = Hospital_Records.objects.get(name=data['h_name'])
+            new_record.address = data['action']
+            new_record.available -= 1
+            new_record.total += 1
+            new_record.save()
         return HttpResponse("Nice Boi")
 
         # except:    
