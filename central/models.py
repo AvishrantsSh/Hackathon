@@ -11,6 +11,8 @@ class Hospital_Records(models.Model):
     recovered = models.IntegerField(default=0)
     fatalities = models.IntegerField(default=0)
 
+    def __str__(self):
+        return self.name
    
 class Records(models.Model):
     choice = [
