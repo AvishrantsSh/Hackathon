@@ -7,19 +7,20 @@ import json
 @csrf_exempt
 def newdt(request):
     if request.method == 'POST':
-        # try:
-        data = json.loads(request.body.decode("utf-8"))
-        if data['h_name'] and data['age'] and data['action']:
-            new_record = Hospital_Records.objects.get(name=data['h_name'])
-            new_record.address = data['action']
-            new_record.available -= 1
-            new_record.total += 1
-            new_record.save()
-        return HttpResponse("Nice Boi")
+        try:
+            if request.POST['h_name'] and request.POST['age'] and request.POST['action']:
+                new_record = Hospital_Records.objects.get(name=request.POST['h_name'])
+                new_record.address = request.POST['action']
+                new_record.available -= 1
+                new_record.total += 1
+                new_record.save()
 
-        # except:    
-        #     return HttpResponse("I Ka Bhej Diye Ho")               
-        
+                # Age Stuff
+                return HttpResponse("Nice Boi")
+        except:    
+            return HttpResponse("I Ka Bhej Diye Ho")               
+        return HttpResponse(str(request.body)+" ye mila mujhe" + str(type(request.body)))
+
     return HttpResponse("Lag Gaye")
 
 def random_gen(request):
