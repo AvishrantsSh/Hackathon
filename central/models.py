@@ -7,7 +7,7 @@ class Hospital_Records(models.Model):
     subd = models.CharField(default='-', max_length=20)
     bed_capacity = models.IntegerField(default=0)
     available = models.IntegerField(default=0)
-    total = models.IntegerField()
+    total = models.IntegerField(default=0)
     recovered = models.IntegerField(default=0)
     fatalities = models.IntegerField(default=0)
 
