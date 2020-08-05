@@ -7,17 +7,21 @@ class Hospital_Records(models.Model):
     subd = models.CharField(default='-', max_length=20)
     bed_capacity = models.IntegerField(default=0)
     available = models.IntegerField(default=0)
-    total = models.IntegerField(default=0)
+    total = models.IntegerField()
     recovered = models.IntegerField(default=0)
     fatalities = models.IntegerField(default=0)
 
-    def save(self, *args, **kwargs):
-        self.total += 1
-        return super(Hospital_Records, self).save(*args, **kwargs)
+   
+class Records(models.Model):
+    choice = [
+        ("Treatment","Treatment"),
+        ("Released","Released"),
+        ("Death","Death")
+    ]
 
-class Age_Freq(models.Model):
     age = models.IntegerField()
-    frequency = models.IntegerField(default=0)
+    medical_history = models.CharField(max_length=20, default='0,0,0,0,0,0,0')
+    status = models.CharField(max_length=10, choices=choice)
 
 
 # Create your models here.
