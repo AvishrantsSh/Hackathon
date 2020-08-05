@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .models import Hospital_Records, Age_Freq
 import json
 
@@ -21,6 +21,7 @@ def newdt(request):
         #         return HttpResponse("Nice Boi")
         # except:    
         #     return HttpResponse("I Ka Bhej Diye Ho")               
-        return HttpResponse(str(request.body)+" ye mila mujhe" + str(type(request.body)))
+        # return HttpResponse(str(request.body)+" ye mila mujhe" + str(type(request.body)))
+        return JsonResponse(json.loads(request.body))
     return HttpResponse("Lag Gaye")
 # Create your views here.
