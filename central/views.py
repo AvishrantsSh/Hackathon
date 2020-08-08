@@ -2,7 +2,14 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from .models import Hospital_Records, Records
+from django.views import generic
 import json, random
+
+class GenStats_View(generic.ListView):
+    model = Records
+    template_name = 'stats.html'
+    context_object_name = 'records'
+    
 
 @csrf_exempt
 def newdt(request):

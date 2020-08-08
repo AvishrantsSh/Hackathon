@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+
+{%load static%}
+
+{%block title%}
+    Home|Test
+{%endblock title%}
+{%block link%}
+    <link rel="stylesheet" href="{%static 'style/devstyle.css'%}?v=1.1">
+
+{%endblock link%}
+
+<!-- Start From here -->
+{%block content%}
+    <div id="center">Some of the inidividuals you will ever meet.</div>
+    <div id="contrib">
+        <table >
+            <tr>
+                <td>
+                    <img src="{%static 'images/assets/Avishrant.jpg'%}" id="imgstyle">
+                    <figcaption> 
+                        <span id="title_name">The Mechanic</span><br>
+                        Avishrant Sharma
+                    </figcaption>
+                </td>
+                <td>
+                    <img src="{%static 'images/assets/Kunal.jpg'%}" id="imgstyle">
+                    <figcaption> 
+                        <span id="title_name">The Pro</span><br>
+                        Kunal Thakur
+                    </figcaption>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{%static 'images/assets/Prateek.jpg'%}" id="imgstyle">
+                    <figcaption> 
+                        <span id="title_name">The Artist</span><br>
+                        Prateek Thakur
+                    </figcaption>
+                </td>
+                <td>
+                    <img src="{%static 'images/assets/Pushpdeep.jpg'%}" id="imgstyle">
+                    <figcaption> 
+                        <span id="title_name">The Brainstormer</span><br>
+                        Pushpdeep Singh
+                    </figcaption>
+                </td>
+            </tr>
+        </table>
+    </div>
+   
+{%endblock content%}

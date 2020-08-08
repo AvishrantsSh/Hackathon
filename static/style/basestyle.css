@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-size: 2vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 a{
     text-decoration: none;
@@ -19,8 +20,12 @@ a{
     background-color: #333;
     color: white;
 }
+#footer a{
+    color: white;
+}
 #top_head{
     width: 100vw;
+    font-size: 8vh;
     height: 70%;
 }
 #link_head{
