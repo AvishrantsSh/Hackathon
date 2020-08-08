@@ -3,7 +3,7 @@ const CACHE = 'test_cache_1';
 const filestoCache = ['/static/noconn.html',
                       '/static/style/basestyle.css',
                       '/manifest.json',
-                      '/static/images/assets/Avisharnt.jpg',
+                      '/static/images/assets/Avishrant.jpg',
                       '/static/images/assets/Kunal.jpg',
                       '/static/images/assets/Prateek.jpg',
                       '/static/images/assets/Pushpdeep.jpg',
