@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    font-size: 2vh;
+}
+a{
+    text-decoration: none;
+}
+#header{
+    width: 100vw;
+    height: 10vh;
+}
+#mbody{
+    width:100vw;
+    min-height: 60vh;
+}
+#footer{
+    width:100vw;
+    height: 30vh;
+    background-color: #333;
+    color: white;
+}
+#top_head{
+    width: 100vw;
+    height: 70%;
+}
+#link_head{
+    width: 100vw;
+    box-sizing: border-box;
+    height: 30%;
+    text-align: right;
+    padding-right: 1vw;
+}

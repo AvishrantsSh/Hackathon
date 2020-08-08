@@ -1,9 +1,10 @@
 
-const CACHE = 'test_cache_v1.0';
+const CACHE = 'test_cache_v1.1';
 const filestoCache = ['/static/noconn.html',
-                      '/static/stylesheet/basestyle.css',
+                      '/static/style/basestyle.css',
                       '/manifest.json',
                       '/static/images/icons/avatar.svg',
+                      '/static/images/icons/avatar.png',
 ]
 const offlineURL = ['/static/noconn.html']
 

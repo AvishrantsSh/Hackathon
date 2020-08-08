@@ -1,0 +1,81 @@
+
+.boxcontainer{
+	display:flex;
+	padding-top: 5vh;
+	justify-content: center;
+}
+.center_form{
+	flex-direction: column;
+}
+#flash_box{
+	display: block;
+	padding: 15px 20px;
+    margin: 0 auto 10px;
+	background-color: #ffe3e6;
+	border-style: solid;
+    border-width: 1px;
+	border-radius: 5px;
+	border-color: rgba(158,28,35,0.2);
+	text-align: center;
+}
+.loginbox{
+	margin: 0;
+	padding: 0;
+	width: fit-content;
+	border-radius: 1vw;
+	box-shadow: 0px 1px 4px 0px;
+}
+
+.loginhead{
+	background-color: #333;
+	text-align: center;
+	color: white;
+	border-top-left-radius: 1vw;
+	border-top-right-radius: 1vw;
+	padding: 1vh;
+	font-size: 3vh;
+}
+
+.loginform{
+	margin:1vh;
+	margin-left: 2.5vh;
+	margin-right: 2.5vh;
+	font-size: 2vh;
+}
+
+#loginbtn{
+
+	background-color: #333;
+  	border-radius: 10px;
+  	border: none;
+	color: white;
+	font-size: 1.5vh;
+	padding: 5px 10px;
+	margin-bottom: 2vh;
+	text-align: center;
+	outline: none;
+	transition: font-size 0.1s;
+	  
+}
+#loginbtn:hover{
+	background-color: rgb(238, 82, 113);
+	font-size: 1.6vh;
+  	
+}
+input[type=text],input[type=password]{
+	width: 30vh;
+	font-size: 1.8vh;
+	border: 1px solid grey;
+	border-radius: 3px;
+	outline: none;
+	color: #222;
+
+}
+#flash_close{
+	border: 0;
+	background: none;
+	color: rgba(158,28,35,.6);
+}
+#flash_close:hover{
+	color: rgba(158,28,35,.8);
+}

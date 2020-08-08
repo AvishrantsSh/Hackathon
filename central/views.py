@@ -21,7 +21,7 @@ def newdt(request):
                 return HttpResponse("Nice Boi")
         
         except:    
-            return HttpResponse("I Ka Bhej Diye Ho")
+            return HttpResponse("I Ka Bhej Diye Ho "+ str(request.user))
     
     return HttpResponse("Lag Gaye")
 

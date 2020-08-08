@@ -14,7 +14,7 @@
         <meta name="keywords" content="Donation, Funds, Uphaar">
         <meta name="author" content="Avishrant Sharma">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" href="{%static 'stylesheet/basestyle.css'%}">
+        <link rel="stylesheet" href="{%static 'style/basestyle.css'%}">
         
         <!-- Path to manifest.json -->
         <link rel="manifest" href="/manifest.json">
@@ -47,10 +47,26 @@
     </head>
 
     <body>
-        {%block content%}
-        
-        {%endblock content%}
-                
+        <div id="header">
+            <div id="top_head">
+                <a href="{%url 'home'%}">Test Site</a>
+            </div>
+            <div id="link_head">
+                {%if user.is_authenticated%}
+                    <a href="{%url 'logout'%}">Logout</a>
+                {%else%}
+                    <a href="{%url 'login'%}">Login</a>
+                {%endif%}
+            </div>
+        </div>
+        <div id="mbody">
+            {%block content%}
+            
+            {%endblock content%}
+        </div>
+        <div id="footer">
+
+        </div>   
       
     </body>
 </html>
