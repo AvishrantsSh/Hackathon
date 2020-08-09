@@ -1,4 +1,11 @@
 django
 gunicorn
 django-heroku
+plotly
+pandas
+fbprophet
+numpy 
+scipy
+
+
 

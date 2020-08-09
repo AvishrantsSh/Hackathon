@@ -3,10 +3,11 @@
     Statistics
 {%endblock title%}
 {%block link%}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 {%endblock link%}
 
 {%block content%}
     Some stats but unfortunately there is nothing to show. Sorry
-   
+    {{graph|safe}}
 {%endblock content%}

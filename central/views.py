@@ -4,12 +4,18 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from .models import Hospital_Records, Records
 from django.views import generic
 import json, random
+from central.gcovid_ind import Covid_map
 
-class GenStats_View(generic.ListView):
+class GenStats_View(generic.TemplateView):
     model = Records
     template_name = 'stats.html'
     context_object_name = 'records'
     
+    def get_context_data(self, **kwargs):
+        context = super(GenStats_View, self).get_context_data(**kwargs)
+        obj = Covid_map()
+        context['graph'] = obj.plot_graph()
+        return context        
 
 @csrf_exempt
 def newdt(request):
