@@ -6,6 +6,7 @@ pandas
 fbprophet
 numpy 
 scipy
-
+nbformat
+matplotlib
 
 

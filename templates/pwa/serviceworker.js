@@ -1,5 +1,5 @@
 
-const CACHE = 'test_cache_v221';
+const CACHE = 'cache_v1';
 const filestoCache = ['/static/noconn.html',
                       '/static/style/basestyle.css',
                       '/manifest.json',
