@@ -8,5 +8,6 @@ numpy
 scipy
 nbformat
 matplotlib
+requests
 
 

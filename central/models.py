@@ -24,7 +24,4 @@ class Records(models.Model):
     medical_history = models.CharField(max_length=50, default='[0,0,0,0,0,0,0]')
     status = models.CharField(max_length=10, choices=choice)
     
-    
-
-
-# Create your models here.
+    # Create your models here.
