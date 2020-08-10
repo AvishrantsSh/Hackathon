@@ -1,37 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oxygen&display=swap');
+
+
 body{
     margin: 0;
     font-size: 2vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Overpass, Oxygen, sans-serif;
 }
 a{
     text-decoration: none;
+    color: inherit;
+    margin: 1vw;
+
 }
 #header{
-    width: 100vw;
+    width: 98vw;
+    padding-left: 2vw;]
+    padding-right: 2vw;
     height: 10vh;
+    padding-top: 1vh;
+    background: linear-gradient(120deg, rgba(207,0,6,0.8) 0%, rgba(137,0,110,1) 40%, rgba(75,0,102,1) 100%);
+    display: grid;
 }
+
 #mbody{
-    width:100vw;
-    min-height: 60vh;
+    padding-top: 3vh;
+    padding-left: 2vw;
+    padding-right: 2vw
+    width:96vw;
+    min-height: 79vh;
 }
+
+#body_container_1{
+    display: grid;
+}
+
+#left_body{
+    grid-column: 1;
+}
+
+#right_body{
+    grid-column: 2;
+}
+
 #footer{
     width:100vw;
-    height: 30vh;
-    background-color: #333;
+    background-color:  rgba(40,0,60,0.85);
     color: white;
+    position: relative;
+    height: 5vh;
+    text-align: center;
+    padding-top: 2vh;
 }
+
 #footer a{
     color: white;
 }
+
 #top_head{
-    width: 100vw;
-    font-size: 8vh;
-    height: 70%;
+    padding-top: 0.5vh;
+    color: white;
+    font-size: 5.5vh;
+    grid-column: 1;
 }
+
 #link_head{
-    width: 100vw;
     box-sizing: border-box;
-    height: 30%;
     text-align: right;
+    font-size: 2.5vh;
     padding-right: 1vw;
+    color: white;
+    grid-column: 2;
+    margin-top: 3vh;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    #header{
+        display: grid;
+        height: 6.5vh;
+    }
+
+    #mbody{
+        min-height: 82.5vh;
+    }
+
+    #top_head{
+        padding-top: 1vh;
+        font-size: 3vh;
+        height: 70%;
+    }
+
+    #link_head{
+        margin-top: 2vh;
+        font-size: 2vh;
+        height: 30%;
+    }
 }
