@@ -15,8 +15,8 @@ a{
 }
 #header{
     width: 98vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
     height: 10vh;
     padding-top: 1vh;
     background: linear-gradient(120deg, rgba(207,0,6,0.8) 0%, rgba(137,0,110,1) 40%, rgba(75,0,102,1) 100%);
