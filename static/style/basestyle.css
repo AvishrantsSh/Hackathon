@@ -15,7 +15,7 @@ a{
 }
 #header{
     width: 98vw;
-    padding-left: 2vw;]
+    padding-left: 2vw;
     padding-right: 2vw;
     height: 10vh;
     padding-top: 1vh;
@@ -26,7 +26,7 @@ a{
 #mbody{
     padding-top: 3vh;
     padding-left: 2vw;
-    padding-right: 2vw
+    padding-right: 2vw;
     width:96vw;
     min-height: 79vh;
 }
