@@ -26,6 +26,7 @@ class Covid_map(object):
         self.normalise()
         data = self.plot_graph()
         fobj.write("Date:"+str(date.today())+"$Data:"+str(data))
+        fobj.truncate()
         fobj.close()
         return data
 
