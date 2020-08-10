@@ -1,1 +1,54 @@
 /* Something */
+
+
+@media only screen and (max-width: 768px) {
+	.modebar-container{
+		visibility: hidden;
+	}
+
+	.plotly-graph-div{
+		width: 100% !important;
+		height: 75vh !important;
+	}
+
+	.js-plotly-plot{
+		width: 100% !important;
+		height: 75vh !important;
+	}
+
+	.plot-container{
+		width: 100% !important;
+		height: 75vh !important;
+	}
+
+	.svg-container{
+		width: 100% !important;
+		height: 75vh !important;
+	}
+
+	.infolayer{
+		width: 100% !important;
+		height: 75vh !important;
+	}
+
+	.main-svg{
+		width: 100% !important;
+		height: 100% !important;
+		padding-left: 0vw;
+	}
+
+	.rangeslider-container{
+		visibility: hidden;
+		display: none;
+	}
+
+	.g-xtitle{
+		visibility: hidden;
+		display: none;
+	}
+
+	.g-ytitle{
+		visibility: hidden;
+		display: none;
+	}
+}
