@@ -14,7 +14,7 @@ class GenStats_View(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(GenStats_View, self).get_context_data(**kwargs)
         obj = Covid_map()
-        context['graph'] = obj.plot_graph()
+        context['graph'] = obj.get_stats()
         return context        
 
 @csrf_exempt

@@ -1,10 +1,10 @@
-import calendar
+import calendar, os
 import pandas as pd
 from scipy.optimize import curve_fit
 import numpy as np
 from math import exp
 import requests, json
-from datetime import datetime
+from datetime import datetime, date
 from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
 import plotly.offline as py
@@ -12,8 +12,22 @@ import plotly.offline as py
 class Covid_map(object):
     def __init__(self):
         self.link = "https://api.covid19india.org/data.json"
+        
+    def get_stats(self):
+        module_dir = os.path.dirname(__file__)  
+        file_path = os.path.join(module_dir, 'temp.txt')
+        fobj = open(file_path, "r+")
+        flist = fobj.read().split('$')
+        if str(flist[0])[5:] == str(date.today()):
+            fobj.close()
+            return str(flist[1])[5:] 
+        
         self.get_data()
         self.normalise()
+        data = self.plot_graph()
+        fobj.write("Date:"+str(date.today())+"$Data:"+str(data))
+        fobj.close()
+        return data
 
     def func_logistic(self, t, a, b, c):
         return c / (1 + a * np.exp(-b*t))
