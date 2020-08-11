@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block title%}
+    Support|Test
+{%endblock title%}
+
+{%block link%}
+    <link rel="stylesheet" href="{%static 'style/h_details.css'%}">
+{%endblock link%}
+
+{%block content%}
+        {{object.name}}<br>
+        {{object.address}}<br>
+        {{object.bed_capacity}}<br>
+        {{object.available}}<br>
+    <a href="{%url 'change'%}">Change Data</a>
+
+{%endblock content%}

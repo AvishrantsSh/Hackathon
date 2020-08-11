@@ -4,7 +4,8 @@ class Hospital_Records(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4)
     name = models.CharField(max_length=20, default='None')
     address = models.TextField()
-    subd = models.CharField(default='-', max_length=20)
+    region = models.CharField(default='-', max_length=20)
+    country = models.CharField(default='', max_length=20)
     bed_capacity = models.IntegerField(default=0)
     available = models.IntegerField(default=0)
     total = models.IntegerField(default=0)
@@ -23,5 +24,6 @@ class Records(models.Model):
     age = models.IntegerField()
     medical_history = models.CharField(max_length=50, default='[0,0,0,0,0,0,0]')
     status = models.CharField(max_length=10, choices=choice)
-    
+
+   
     # Create your models here.

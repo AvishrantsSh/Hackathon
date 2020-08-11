@@ -7,6 +7,8 @@ urlpatterns = [
     path('contributors/', TemplateView.as_view(template_name='dev.html'), name='dev'),
     path('stats/general', views.GenStats_View.as_view(), name='gstats'),
     path('add/',views.newdt,name='add'),
+    path('details/',views.H_Details.as_view(), name='details'),
+    path('change/',views.Details_change.as_view(), name='change'),
     path('random/', views.random_gen, name='random'),
     path('generate/', TemplateView.as_view(template_name='generate.html'), name='generate'),
     # path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
