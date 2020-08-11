@@ -1,5 +1,5 @@
 
-const CACHE = 'atdfgh';
+const CACHE = 'cache_v65';
 const filestoCache = ['/static/noconn.html',
                       '/static/style/basestyle.css',
                       '/manifest.json',

@@ -1,6 +1,8 @@
 /* Something */
 
-
+#graph_container{
+	width: 50vw;
+}
 @media only screen and (max-width: 768px) {
 	.modebar-container{
 		visibility: hidden;
@@ -50,5 +52,8 @@
 	.g-ytitle{
 		visibility: hidden;
 		display: none;
+	}
+	#graph_container{
+		width: 100vw;
 	}
 }

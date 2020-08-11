@@ -95,7 +95,7 @@ class Covid_map(object):
 
 
         layout = go.Layout(
-                        yaxis = {'title': {'text': 'y'}},
+                        yaxis = {'title': {'text': 'y'}, 'automargin':True},
                         hovermode = 'x',
                         xaxis = {'rangeselector': {'buttons': [{'count': 7, 'label': '1w', 'step': 'day', 'stepmode': 'backward'},
                                                                             {'count': 1,
@@ -110,15 +110,23 @@ class Covid_map(object):
                                                                             {'step': 'all'}]},
                                                 'rangeslider': {'visible': True},
                                                 'title': {'text': 'ds'},
+                                                'automargin': True,
                                                 'type': 'date'},
                         
                         legend = {
-                            'bgcolor': 'rgba(0,0,0,0)'
-                        },
-                        autosize=True,
-                       
+                            'yanchor':"top",
+                            'y':0.99,
+                            'xanchor':"left",
+                            'x':0.01
+                      },
+                      margin= {
+                          'l': 10, 
+                          'r': 10, 
+                          't': 10, 
+                          'b': 10, 
+                          'pad':5,},
                         )
 
         data = [yhat_upper, yhat]
         fig = dict(data = data, layout = layout)
-        return py.plot(fig, output_type='div', include_plotlyjs=False,show_link=False, link_text="", image_width="500px")
+        return py.plot(fig, output_type='div', include_plotlyjs=False, show_link=False, link_text="", image_width='100px', image_height='100px', config={'responsive':True})
