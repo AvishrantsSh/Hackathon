@@ -5,16 +5,10 @@
 #contrib{
     width: 100vw;
     box-sizing: border-box;
-    display: flex;
+    display: grid;
     justify-content: center;
 }
-table{
-    width: 80%;
-    text-align: center;
-}
-td{
-    padding: 25px;
-}
+
 #imgstyle{
     height: 200px;
     border-radius: 50%;
@@ -23,4 +17,33 @@ td{
     font-family: sans-serif;
     font-size: 3vh;
     font-weight:bolder;
+}
+
+#Avishrant{
+    grid-column: 1;
+    text-align: center;
+}
+
+#Kunal{
+    grid-column: 2;
+    text-align: center;
+}
+
+#box{
+    text-align: center;
+    justify-content: center;
+    height: 30vh;
+    width: 50vw;
+    padding-top: 3vh;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    #Kunal{
+        grid-column: 1;
+    }
+
+    #Pushpdeep{
+        padding-bottom: 3vh;
+    }
 }
