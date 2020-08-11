@@ -1,0 +1,22 @@
+
+#heading_container{
+	border-bottom: solid;
+	border-radius: 3vw;
+	border-color: rgba(75,0,102,1);
+	padding-left: 3vw;
+}
+
+#main_head{
+	font-family: overpass;
+	font-size: 3.5vh;
+	margin:0;
+}
+
+#form_container{
+	padding-left: 3vw;
+	padding-top: 2vh;
+	width: 150px;
+}
+
+#mbody{
+}

@@ -6,14 +6,33 @@
 {%endblock title%}
 
 {%block link%}
-    <link rel="stylesheet" href="{%static 'style/h_details.css'%}">
+    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.1">
 {%endblock link%}
 
 {%block content%}
-        {{object.name}}<br>
-        {{object.address}}<br>
-        {{object.bed_capacity}}<br>
-        {{object.available}}<br>
-    <a href="{%url 'change'%}">Change Data</a>
 
+<div id = "body_container">
+	<div id = "heading_container">
+		<h3 id = "main_head">
+		Institution Dashboard
+		</h3>
+	</div>
+
+	<div id = "dash_container">
+		<div id = "left_dash">
+			<p id = "text">Name of Hospital: {{object.name}}<br></p>
+			<p id = "text">Address: {{object.address}}<br></p>
+			<p id = "text">Total Bed Capacity: {{object.bed_capacity}}<br></p>
+			<p id = "text">Available Beds: {{object.available}}<br></p>
+		</div>
+
+		
+	</div>
+
+	<div id = "link_container">
+		<br>
+		<a id = "edit" href="{%url 'change'%}">Change Data</a>
+	</div>
+
+</div>
 {%endblock content%}

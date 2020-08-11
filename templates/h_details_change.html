@@ -6,14 +6,23 @@
 {%endblock title%}
 
 {%block link%}
-    <link rel="stylesheet" href="{%static 'style/h_details.css'%}">
+    <link rel="stylesheet" href="{%static 'style/h_details_change.css'%}?v=1.1">
 {%endblock link%}
 
 {%block content%}
+
+<div id = "heading_container">
+		<h3 id = "main_head">
+		Edit Details
+		</h3>
+</div>
+
+<div id="form_container">
 <form method="post">
     {% csrf_token %}
         {{form}}
    
     <input type="submit" value="Save" />
 </form>
+</div>
 {%endblock content%}

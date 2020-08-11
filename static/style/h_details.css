@@ -1,0 +1,37 @@
+
+
+#text{
+	padding-left: 3vw;
+}
+
+#main_head{
+	font-family: overpass;
+	font-size: 3.5vh;
+	margin:0;
+}
+
+
+#dash_container{
+	margin-top: 3vh;
+	display: grid;
+}
+
+#left_dash{
+	grid-column: 1;
+	width: 40vw;
+}
+
+#heading_container{
+	border-bottom: solid;
+	border-radius: 3vw;
+	border-color: rgba(207,0,6,1);
+	padding-left: 3vw;
+}
+
+#link_container{
+	text-align: center;
+}
+
+#edit{
+	text-decoration: underline;
+}
