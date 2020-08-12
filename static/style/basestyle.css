@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
 
 
 body{
@@ -25,39 +28,6 @@ a{
     display: grid;
 }
 
-#mbody{
-    padding-top: 3vh;
-    
-    width:100vw;
-    min-height: 79vh;
-}
-
-#body_container_1{
-    display: grid;
-}
-
-#left_body{
-    grid-column: 1;
-}
-
-#right_body{
-    grid-column: 2;
-}
-
-#footer{
-    width:100vw;
-    background-color:  rgba(40,0,60,0.85);
-    color: white;
-    position: relative;
-    height: 5vh;
-    text-align: center;
-    padding-top: 2vh;
-}
-
-#footer a{
-    color: white;
-}
-
 #top_head{
     padding-top: 0.5vh;
     color: white;
@@ -74,6 +44,142 @@ a{
     grid-column: 2;
     margin-top: 3vh;
 }
+
+#mbody{
+    padding-top: 3vh;
+    
+    width:100vw;
+    min-height: 79vh;
+}
+
+#footer{
+    width:100vw;
+    background-color: rgba(40,0,60,0.85);
+    color: white;
+    position: relative;
+    height: 5vh;
+    text-align: center;
+    padding-top: 2vh;
+}
+
+#footer a{
+    color: white;
+}
+
+
+/*################################################*/
+
+
+.home_container{
+    margin: 2vh;
+    text-align: center;
+}
+
+#title_sec{
+    font-family: Poiret One;
+    font-size: 4vw;
+}
+
+#define_sec{
+    display: grid;
+}
+
+#vis_sec{
+    display: grid;
+    background: linear-gradient(120deg, rgba(75,0,102,0.4) 0%, rgba(137,0,110,0.6) 60%, rgba(207,0,6,0.4) 100%);
+    margin-bottom: 3vh;
+}
+
+#left_define{
+    grid-column: 1;
+    width: 60vw;
+    text-align: right;
+    padding: 3vh;
+    font-size: 2.5vw;
+    font-family: 'Thasadith', sans-serif; 
+}
+
+#right_define{
+    grid-column: 2;
+    width: 20vw;
+}
+
+#left_vis{
+    grid-column: 1;
+    width: 20vw;
+    padding: 3vh;
+    font-family: Poiret One, sans-serif;
+    font-size: 3.5vw;
+    margin:0;
+}
+
+#right_vis{
+    grid-column: 2;
+    width: 60vw;
+    text-align: left;
+    padding: 3vh;
+    padding-top: 4vh;
+    font-size: 2.5vw;
+    margin:0;
+    font-family: 'Thasadith', sans-serif; 
+}
+
+#tech_container{
+    display: grid;
+}
+
+#tech_head{
+    padding-top: 3vw;
+    font-family: Poiret One, sans-serif;
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+#tech_head2{
+    font-family: Overpass;
+    font-style: lighter;
+    font-size: 25px
+}
+
+#tech1{
+    grid-column: 1;
+    width: 25vw;
+    text-align: center;
+    padding: 3vh;
+    padding-right: 0;
+ /*   background-color: rgba(207,0,6,0.2);*/
+
+}
+
+#tech2{
+    grid-column: 2;
+    width: 25vw;
+    text-align: center;
+    padding: 3vh;
+/*   background-color: rgba(137,0,110,0.2);*/
+}
+
+#tech3{
+    grid-column: 3;
+    width: 25vw;
+    text-align: center;
+    padding: 3vh;
+/*    background-color: rgba(75,0,102,0.2);*/
+}
+
+#left_body{
+    grid-column: 1;
+}
+
+#right_body{
+    grid-column: 2;
+}
+
+#img{
+    width:80%;
+}
+
+/*################################################*/
 
 @media only screen and (max-width: 768px) {
     

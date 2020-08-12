@@ -9,30 +9,71 @@
 
     
 {%endblock link%}
-    <link rel="stylesheet" href="{%static 'style/homestyle.css'%}">
+    <link rel="stylesheet" href="{%static 'style/homestyle.css'%}?v=1.2">
 
 {%block content%}
 
+<div class="home_container">
+	<div id="title_sec">
+		<h2>
+			Hola, Amigos!
+		</h2>
+	</div>
 
-<h2> Heading 2
-	<br> We recommend viewing this website in a computer.
-</h2>
+	<div id="define_sec">
+		<p id = "left_define">
+			Welcome to our Inter-Hospital Management and Relevant Data Management system, which has been designed and created specifically to tackle various Pandemic (and similar) situations.		
+		</p>
+		<p id = "right_define">
+			<img src="{%static 'images/assets/doctor.svg'%}" id="doc">		
+		</p>
+	</div>
 
-<div id="body_container_1">
 
-<p id = "left_body">
-	left hand stuff (text probably)
-</p>
-<p id = "right_body">
-	right hand stuff (image or something)
-</p>
+	<div id="vis_sec">
+		<p id = "left_vis">
+			Our Vision
+		</p>
+		<p id = "right_vis">
+		Well, its nice to have one
+		</p>
+	</div>
+
+
+	<div id="tech_sec">
+		<div id="tech_head">
+			How does it work?
+		</div>
+		<div id="tech_container">
+			<p id = "tech1">
+				<span id = "tech_head2"> Data </span><br>
+			<img src="{%static 'images/assets/hospital.svg'%}" id="img"><br>
+				Bulleted List
+				
+			</p>
+
+			<p id = "tech2">
+				<span id = "tech_head2"> Ambulance </span><br>
+			<img src="{%static 'images/assets/ambulance.svg'%}" id="img"><br>
+				Bulleted list
+			</p>
+
+			<p id = "tech3">
+				<span id = "tech_head2"> Prediction </span><br>
+			<img src="{%static 'images/assets/stats.svg'%}" id="img"><br>
+				Bulleted List
+			</p>
+
+		</div>
+	</div>
+
+	<div id="body_container_1">
+		<p id = "left_body">
+			Section 4 (left hand stuff)
+		</p>
+		<p id = "right_body">
+			right hand stuff (image or something)
+		</p>
+	</div>
 </div>
-
-<h3> Heading 3</h3>
-<div id="body_container_2">
-<p>
-	something cool, probably a map. (T-T)
-</p>
-</div>
-
 {%endblock content%}
