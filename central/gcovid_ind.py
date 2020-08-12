@@ -21,15 +21,24 @@ class Covid_map(object):
         flist = fobj.read().split('$')
         if str(flist[0])[5:] == str(date.today()):
             fobj.close()
-            return str(flist[1])[5:] 
+            return str(flist[1])[5:], str(flist[2])[7:],str(flist[3])[11:],str(flist[4])[10:],str(flist[5])[7:],str(flist[6])[11:],str(flist[7])[10:], 
         
         self.get_data()
         self.normalise()
         data = self.plot_graph()
-        fobj.write("Date:"+str(date.today())+"$Data:"+str(data))
+        fobj.write("Date:"+str(date.today())+
+                    "$Data:"+str(data)+
+                    "$TTotal:"+str(self.total)+
+                    "$TRecovered:"+str(self.recovered)+
+                    "$TDeceased:"+str(self.deceased)+
+                    "$DTotal:"+str(self.tchange)+
+                    "$DRecovered:"+str(self.rchange)+
+                    "$DDeceased:"+str(self.dchange)
+                    )
+
         fobj.truncate()
         fobj.close()
-        return data
+        return data, self.total, self.recovered, self.deceased, self.tchange, self.rchange, self.dchange
 
     def func_logistic(self, t, a, b, c):
         return c / (1 + a * np.exp(-b*t))
@@ -40,6 +49,9 @@ class Covid_map(object):
 
     def normalise(self):
         x = len(self.todos['cases_time_series'])
+        tmp = self.todos['cases_time_series'][x-1]
+        self.total, self.recovered, self.deceased = tmp['totalconfirmed'], tmp['totaldeceased'], tmp['totalrecovered']
+        self.tchange, self.rchange, self.dchange = tmp['dailyconfirmed'], tmp['dailydeceased'], tmp['dailyrecovered']
         for i in range(x):
             cdate = self.todos['cases_time_series'][i]['date'].split()
             cdate[1] = str(list(calendar.month_name).index(cdate[1]))
