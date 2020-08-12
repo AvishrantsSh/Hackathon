@@ -119,12 +119,13 @@ class Covid_map(object):
                             'xanchor':"left",
                             'x':0.01
                       },
+                      autosize = True,
                       margin= {
                           'l': 10, 
-                          'r': 30, 
-                          't': 10, 
+                          'r': 0, 
+                          't':75, 
                           'b': 10, 
-                          'pad':5,},
+                          'pad':0,},
                         )
 
         data = [yhat_upper, yhat]

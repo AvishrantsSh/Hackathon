@@ -1,6 +1,7 @@
 
-const CACHE = 'cache_v65';
+const CACHE = 'cache_v6';
 const filestoCache = ['/static/noconn.html',
+                      'https://cdn.plot.ly/plotly-latest.min.js',
                       '/static/style/basestyle.css',
                       '/manifest.json',
                       '/static/images/assets/Avishrant.jpg',

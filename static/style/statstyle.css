@@ -2,6 +2,19 @@
 
 #graph_container{
 	width: 50vw;
+	height: 60vh;
+}
+div{
+    height: 100%;
+    width: 100%;
+}
+.modebar-container{
+	height: auto;
+	width: auto;
+}
+.modebar-group{
+	height: auto;
+	width: auto;
 }
 @media only screen and (max-width: 768px) {
 	.modebar-container{
