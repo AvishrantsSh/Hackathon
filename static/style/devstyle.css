@@ -32,9 +32,9 @@
 #box{
     text-align: center;
     justify-content: center;
-    height: 30vh;
     width: 50vw;
     padding-top: 3vh;
+    padding-bottom: 3vh;
 }
 
 @media only screen and (max-width: 768px) {
@@ -43,7 +43,7 @@
         grid-column: 1;
     }
 
-    #Pushpdeep{
-        padding-bottom: 3vh;
+    #box{
+        width: 100vw;
     }
 }

@@ -121,7 +121,7 @@ class Covid_map(object):
                       },
                       margin= {
                           'l': 10, 
-                          'r': 10, 
+                          'r': 30, 
                           't': 10, 
                           'b': 10, 
                           'pad':5,},
