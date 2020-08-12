@@ -1,13 +1,16 @@
 /* Something */
 
+#stats_container{
+	min-height: 90vh;
+}
+
 #graph_container{
-	width: 50vw;
+	width: 90vw;
 	height: 60vh;
+	padding-left: 
+	margin-right: 0;
 }
-div{
-    height: 100%;
-    width: 100%;
-}
+
 .modebar-container{
 	height: auto;
 	width: auto;
@@ -16,7 +19,89 @@ div{
 	height: auto;
 	width: auto;
 }
+
+.big_text{
+	font-size: 3vw;
+	font-weight: bold;
+}
+
+.small_text{
+	font-size: 2vw;
+	font-weight: bold;
+	color: rgba(161, 224, 255, 1);
+	padding-top: 1vw;
+}
+
+#yesterday{
+	padding-right: 1vw;
+}
+
+#num_container{
+	text-align: center;
+	padding-top: 2vh;
+	height: 13vw;
+    background: linear-gradient(120deg, rgba(75,0,102,1) 0%, rgba(137,0,110,1) 60%, rgba(207,0,6,0.8) 100%);
+}
+
+#num{
+	display: grid;
+	height: 6.2vw;
+	padding-top: 1vh;
+	background: rgba(256,256, 256, 0.3);
+	color: white;
+	font-weight: bold;
+
+}
+
+#total{
+	grid-column: 1; 
+}
+
+#recover{
+	grid-column: 2;
+}
+
+#death{
+	grid-column: 3;
+}
+
+#total_total{
+	color: rgba(255, 121, 107, 0.9);
+}
+
+#total_recover{
+	color: rgba(150, 240, 105, 0.9);
+}
+
+#total_death{
+	color: rgba(98, 99, 110 0.9);
+}
+
+#day_total{
+	padding-top: 3vh; 
+}
+
+#day_recover{
+	padding-top: 3vh;
+}
+
+#day_death{
+	padding-top: 3vh;
+}
+
+#instructions{
+	padding-left: 3vh;
+}
+
 @media only screen and (max-width: 768px) {
+
+	#num_container{
+		height: 15.5vh;
+	}
+
+	#num{
+		height: 8vh;
+	}
 	.modebar-container{
 		visibility: hidden;
 	}
@@ -67,6 +152,15 @@ div{
 		display: none;
 	}
 	#graph_container{
-		width: 100vw;
+		width: 90vw;
+		height: 40vh;
+	}
+
+	.big_text{
+	font-size: 5vw;
+	}
+
+	.small_text{
+	font-size: 4vw;
 	}
 }

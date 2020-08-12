@@ -50,8 +50,8 @@ class Covid_map(object):
     def normalise(self):
         x = len(self.todos['cases_time_series'])
         tmp = self.todos['cases_time_series'][x-1]
-        self.total, self.recovered, self.deceased = tmp['totalconfirmed'], tmp['totaldeceased'], tmp['totalrecovered']
-        self.tchange, self.rchange, self.dchange = tmp['dailyconfirmed'], tmp['dailydeceased'], tmp['dailyrecovered']
+        self.total, self.recovered, self.deceased = tmp['totalconfirmed'], tmp['totalrecovered'], tmp['totaldeceased']
+        self.tchange, self.rchange, self.dchange = tmp['dailyconfirmed'], tmp['dailyrecovered'], tmp['dailydeceased']
         for i in range(x):
             cdate = self.todos['cases_time_series'][i]['date'].split()
             cdate[1] = str(list(calendar.month_name).index(cdate[1]))

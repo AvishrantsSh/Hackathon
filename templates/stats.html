@@ -10,15 +10,59 @@
 
 {%block content%}
     
-	Please press and hold (and Drag) to slide through the dates on the X -Axis
-    <div id="graph_container">
-        {{graph|safe}}
-        {{ttotal}}
-        {{trecover}}
-        {{tdeath}}
-        {{dtotal}}
-        {{drecover}}
-        {{ddeath}}
-        
+<div id="stats_container">
+    
+    <div id = "num_container">
+
+        <div id = "num">
+            
+            <div id = "total">
+                <div id="total_total" class = "big_text">
+                    {{ttotal}}
+                </div>
+                Total Cases
+            
+                <div id="day_total" class = "small_text">
+                    &mapstoup; {{dtotal}}
+                </div>
+                
+            </div>
+
+            <div id = "recover">
+                <div id="total_recover" class = "big_text">
+                    {{trecover}}
+                </div>
+                Recovered
+
+                <div id="day_recover" class = "small_text">
+                     &searr; {{drecover}}
+                </div>
+            </div>
+
+            <div id = "death" >
+                <div id="total_death" class = "big_text">
+                    {{tdeath}}
+                </div>
+                Deceased
+
+                <div id="day_death" class = "small_text">
+                    &#9747; {{ddeath}}
+                </div>
+            </div>
+
+        </div>
+
     </div>
+
+
+    <div id="graph_container">
+        {{graph|safe}}        
+    </div>
+</div>
+
+
+<div id = "instructions">
+    Please press and hold (and Drag) to slide through the dates on the X -Axis
+</div>
+
 {%endblock content%}
