@@ -1,5 +1,5 @@
 
-const CACHE = 'cache_v1246';
+const CACHE = 'cache_v126';
 const filestoCache = ['/static/noconn.html',
                       'https://cdn.plot.ly/plotly-latest.min.js',
                       '/static/style/basestyle.css',

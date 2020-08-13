@@ -5,8 +5,7 @@ body{
     margin: 0;
     font-size: 2vh;
     font-family: Overpass, Oxygen, sans-serif;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
 }
 a{
     text-decoration: none;
@@ -15,11 +14,9 @@ a{
 
 }
 #header{
-    width: 98vw;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    width: 100%;
     height: 10vh;
-    padding-top: 1vh;
+    box-sizing: border-box;
     background: linear-gradient(120deg, rgba(207,0,6,0.8) 0%, rgba(137,0,110,1) 40%, rgba(75,0,102,1) 100%);
     display: grid;
 }
@@ -43,13 +40,13 @@ a{
 
 #mbody{
     padding-top: 3vh;
-    
-    width:100vw;
+    width:100%;
+    box-sizing: border-box;
     min-height: 79vh;
 }
 
 #footer{
-    width:100vw;
+    width:100%;
     background-color: rgba(40,0,60,0.85);
     color: white;
     position: relative;

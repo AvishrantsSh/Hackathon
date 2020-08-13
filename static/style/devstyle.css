@@ -1,10 +1,10 @@
 #center{
-    width: 100vw;
+    width: 100%;
     text-align: center;
 }
 
 #contrib{
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     display: grid;
     justify-content: center;
@@ -45,6 +45,6 @@
     }
 
     #box{
-        width: 100vw;
+        width: 100%;
     }
 }

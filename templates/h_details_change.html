@@ -20,7 +20,10 @@
 <div id="form_container">
 <form method="post">
     {% csrf_token %}
-        {{form}}
+        {%for i in form%}
+            {{i.label_tag}}
+            {{i}}
+        {%endfor%}
    
     <input type="submit" value="Save" />
 </form>

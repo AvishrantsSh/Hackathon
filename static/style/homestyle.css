@@ -8,6 +8,7 @@
 #title_sec{
     font-family: Poiret One;
     font-size: 4vw;
+    width: 100%;
 }
 
 #define_sec{
@@ -18,11 +19,14 @@
     display: grid;
     background: linear-gradient(120deg, rgba(75,0,102,0.4) 0%, rgba(137,0,110,0.6) 60%, rgba(207,0,6,0.4) 100%);
     margin-bottom: 3vh;
-    width: 100vw;
+    width: 100%;
 }
 
 #tech_sec{
-	align-content: center;
+    align-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 #left_define{
@@ -61,9 +65,14 @@
 }
 
 #tech_container{
+    margin: 0;
+    padding: 2vh;
     display: grid;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
     margin-top: 1vw;
-    padding-left: 2vw;
 }
 
 #tech_head{
@@ -80,25 +89,24 @@
     padding-bottom: 2vw;
 }
 
-#tech1{
-    grid-column: 1;
-    width: 25vw;
-    text-align: center;
-    padding: 2vh;
-    padding-right: 0;
-    font-family: 'Thasadith', sans-serif; 
-    font-size: 1.7vw;
- /*   background-color: rgba(207,0,6,0.2);*/
-}
-
 #tech_list{
 	text-align: left;
 	padding-left: 2vh;
 }
 
+#tech1{
+    grid-column: 1;
+    text-align: center;
+    width: 28vw;
+    padding: 2vh;
+    font-family: 'Thasadith', sans-serif; 
+    font-size: 1.7vw;
+ /*   background-color: rgba(207,0,6,0.2);*/
+}
+
 #tech2{
     grid-column: 2;
-    width: 25vw;
+    width: 28vw;
     text-align: center;
     padding: 2vh;
     font-family: 'Thasadith', sans-serif;
@@ -109,7 +117,7 @@
 
 #tech3{
     grid-column: 3;
-    width: 25vw;
+    width: 28vw;
     text-align: center;
     padding: 2vh;
     font-family: 'Thasadith', sans-serif; 
@@ -145,26 +153,24 @@
 		text-align: center;
 		align-content: center;
 	}
-
-	#tech_container{
-		width: 80%;
-		padding-left: 6vh;
-	}
-
+	
 	#tech1{
-		width: 80%;
+        width: 100%;
+        padding: 0;
 		font-size: 2vh;
 	}
 
 	#tech2{
-		grid-column: 1;
-		width: 80%;
+        grid-column: 1;
+        padding: 0;
+		width: 100%;
 		font-size: 2vh;
 	}
 
 	#tech3{
-		grid-column: 1;
-		width: 80%;
+        grid-column: 1;
+        padding: 0;
+		width: 100%;
 		font-size: 2vh;
 	}
 
