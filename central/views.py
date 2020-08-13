@@ -46,6 +46,10 @@ class Details_change(generic.UpdateView):
         else:
             return None
 
+class AllRecords(generic.ListView):
+    model = Hospital_Records
+    template_name = 'all_records.html'
+    context_object_name = 'object'
 
 @csrf_exempt
 def newdt(request):

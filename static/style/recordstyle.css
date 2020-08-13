@@ -1,0 +1,78 @@
+#issuetable, #details{
+    table-layout: fixed;
+    word-break: break-word;
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%;
+    text-align: left;
+    border: 2px solid #ddd; /* Add a grey border */
+    font-size: 2.5vh; /* Increase font-size */
+
+}
+#details{
+  width: 50%;
+}
+#issuetable tr.theader{
+    background-color: #777;
+    color: white;
+  }
+
+#issuetable tr.theader:hover{
+    background-color: #777
+  }
+
+#issuetable tr:hover {
+    background-color: #f1f1f1;
+  }
+
+#issuetable th, #issuetable td {
+    text-align: left; /* Left-align text */
+    padding: 1vh; /* Add padding */
+}
+
+#issue{
+    text-decoration: none;
+    color: #333;
+}
+
+#comment{
+    resize: none;
+    overflow-y: scroll;
+    width: 50%;
+    height:15vh;
+}
+
+#details tr td{
+  padding-bottom: 1vh;
+  border-bottom: 0.1vh solid #ddd;
+}
+
+#details tr:nth-child(even) {background-color: #f2f2f2;}
+
+#details_left{
+    padding-left: 1vh;
+    padding-top: 0.5vh;
+    width: 25vw;
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  #issuetable{
+      margin-top: 3vh;
+      font-size: 1.7vh;
+  }
+  #filter{
+    font-size: 1.5vh;
+  }
+
+  #comment{
+    width: 100%;
+  }
+
+  #details{
+    width: 100%;
+    margin-top: 3vh;
+    font-size: 2vh;
+  }
+
+}

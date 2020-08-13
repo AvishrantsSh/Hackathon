@@ -9,6 +9,7 @@ urlpatterns = [
     path('add/',views.newdt,name='add'),
     path('details/',views.H_Details.as_view(), name='details'),
     path('change/',views.Details_change.as_view(), name='change'),
+    path('records/all/', views.AllRecords.as_view(), name='all_records'),
     path('random/', views.random_gen, name='random'),
     path('generate/', TemplateView.as_view(template_name='generate.html'), name='generate'),
     path('support/', TemplateView.as_view(template_name='support.html'), name='support'),
