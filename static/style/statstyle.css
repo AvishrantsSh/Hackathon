@@ -81,16 +81,8 @@
 	color: rgba(98, 99, 110 0.9);
 }
 
-#day_total{
+#day_total, #day_recover, #day_death{
 	padding-top: 3vh; 
-}
-
-#day_recover{
-	padding-top: 3vh;
-}
-
-#day_death{
-	padding-top: 3vh;
 }
 
 #instructions{

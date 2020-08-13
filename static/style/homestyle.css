@@ -17,7 +17,7 @@
 
 #vis_sec{
     display: grid;
-    background: linear-gradient(120deg, rgba(75,0,102,0.4) 0%, rgba(137,0,110,0.6) 60%, rgba(207,0,6,0.4) 100%);
+    background: linear-gradient(120deg, rgba(75,0,102,0.6) 0%, rgba(137,0,110,0.8) 60%, rgba(207,0,6,0.6) 100%);
     margin-bottom: 3vh;
     width: 100%;
 }
@@ -55,13 +55,13 @@
 
 #right_vis{
     grid-column: 2;
-    width: 60vw;
+    width: 85%;
     text-align: left;
     padding: 3vh;
-    padding-top: 4vh;
     font-size: 2.5vw;
     margin:0;
     font-family: 'Thasadith', sans-serif; 
+    color: white;
 }
 
 #tech_container{
@@ -143,6 +143,7 @@
 	padding: 2vh;
 	height: 4vh;
 	font-size: 3vh;
+	font-weight: bold;
 	font-family: Poiret One, sans-serif;
 
 }
