@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
 
 .home_container{
     text-align: center;
@@ -16,6 +18,11 @@
     display: grid;
     background: linear-gradient(120deg, rgba(75,0,102,0.4) 0%, rgba(137,0,110,0.6) 60%, rgba(207,0,6,0.4) 100%);
     margin-bottom: 3vh;
+    width: 100vw;
+}
+
+#tech_sec{
+	align-content: center;
 }
 
 #left_define{
@@ -34,11 +41,12 @@
 
 #left_vis{
     grid-column: 1;
-    width: 20vw;
+    width: 15vw;
     padding: 3vh;
     font-family: Poiret One, sans-serif;
     font-size: 3.5vw;
     margin:0;
+    background-color: rgba(256, 256, 256, 0.3);
 }
 
 #right_vis{
@@ -54,6 +62,8 @@
 
 #tech_container{
     display: grid;
+    margin-top: 1vw;
+    padding-left: 2vw;
 }
 
 #tech_head{
@@ -64,26 +74,36 @@
 }
 
 #tech_head2{
-    font-family: Overpass;
-    font-style: lighter;
-    font-size: 25px
+    font-family: Thasadith;
+    font-weight: bold;
+    font-size: 1.9vw;
+    padding-bottom: 2vw;
 }
 
 #tech1{
     grid-column: 1;
     width: 25vw;
     text-align: center;
-    padding: 3vh;
+    padding: 2vh;
     padding-right: 0;
+    font-family: 'Thasadith', sans-serif; 
+    font-size: 1.7vw;
  /*   background-color: rgba(207,0,6,0.2);*/
+}
 
+#tech_list{
+	text-align: left;
+	padding-left: 2vh;
 }
 
 #tech2{
     grid-column: 2;
     width: 25vw;
     text-align: center;
-    padding: 3vh;
+    padding: 2vh;
+    font-family: 'Thasadith', sans-serif;
+    font-size: 1.8vw;
+
 /*   background-color: rgba(137,0,110,0.2);*/
 }
 
@@ -91,7 +111,9 @@
     grid-column: 3;
     width: 25vw;
     text-align: center;
-    padding: 3vh;
+    padding: 2vh;
+    font-family: 'Thasadith', sans-serif; 
+    font-size: 1.8vw;
 /*    background-color: rgba(75,0,102,0.2);*/
 }
 
