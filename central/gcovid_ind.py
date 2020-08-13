@@ -19,7 +19,8 @@ class Covid_map(object):
         file_path = os.path.join(module_dir, 'temp.txt')
         fobj = open(file_path, "r+")
         flist = fobj.read().split('$')
-        if str(flist[0])[5:] == str(date.today()):
+        self.today = date.today()
+        if str(flist[0])[5:] == str(self.today):
             fobj.close()
             return str(flist[1])[5:], str(flist[2])[7:],str(flist[3])[11:],str(flist[4])[10:],str(flist[5])[7:],str(flist[6])[11:],str(flist[7])[10:], 
         
@@ -52,6 +53,7 @@ class Covid_map(object):
         tmp = self.todos['cases_time_series'][x-1]
         self.total, self.recovered, self.deceased = tmp['totalconfirmed'], tmp['totalrecovered'], tmp['totaldeceased']
         self.tchange, self.rchange, self.dchange = tmp['dailyconfirmed'], tmp['dailyrecovered'], tmp['dailydeceased']
+        self.init = self.todos['cases_time_series'][0]['date']
         for i in range(x):
             cdate = self.todos['cases_time_series'][i]['date'].split()
             cdate[1] = str(list(calendar.month_name).index(cdate[1]))
@@ -98,17 +100,18 @@ class Covid_map(object):
         yhat_upper = go.Scatter(
                                 x = forecast['ds'],
                                 y = tmp,
-                                marker=dict(color="crimson", size=5),
+                                marker=dict(color="crimson", size=3),
                                 mode="markers",
                                 name = 'Actual',
 
                                 )
 
-
-
         layout = go.Layout(
-                        yaxis = {'title': {'text': 'y'}, 'automargin':True},
-                        hovermode = 'x',
+                        yaxis = {'title': {'text': 'y'}, 
+                                'automargin':True,
+                                'linecolor':'#BCCCDC', 
+                                },
+                        hovermode = 'x unified',
                         xaxis = {'rangeselector': {'buttons': [{'count': 7, 'label': '1w', 'step': 'day', 'stepmode': 'backward'},
                                                                             {'count': 1,
                                                                                 'label': '1m',
@@ -120,10 +123,13 @@ class Covid_map(object):
                                                                                 'stepmode': 'backward'},
                                                                             {'count': 1, 'label': '1y', 'step': 'year', 'stepmode': 'backward'},
                                                                             {'step': 'all'}]},
-                                                'rangeslider': {'visible': True},
+                                                'rangeslider': {'visible': True,
+                                                                },
                                                 'title': {'text': 'ds'},
                                                 'automargin': True,
-                                                'type': 'date'},
+                                                'type': 'date',
+                                                'linecolor':'#BCCCDC',
+                                                },
                         
                         legend = {
                             'yanchor':"top",
@@ -132,6 +138,7 @@ class Covid_map(object):
                             'x':0.01
                       },
                       autosize = True,
+                      dragmode='pan',
                       margin= {
                           'l': 10, 
                           'r': 0, 
@@ -139,7 +146,6 @@ class Covid_map(object):
                           'b': 10, 
                           'pad':0,},
                         )
-
         data = [yhat_upper, yhat]
         fig = dict(data = data, layout = layout)
         return py.plot(fig, output_type='div', include_plotlyjs=False, show_link=False, link_text="", image_width='100px', image_height='100px', config={'responsive':True})
