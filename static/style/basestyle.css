@@ -22,7 +22,7 @@ a{
 }
 
 #top_head{
-    padding-top: 0.5vh;
+    padding-top: 1.3vh;
     color: white;
     font-size: 5.5vh;
     grid-column: 1;
@@ -71,7 +71,6 @@ a{
     }
 
     #top_head{
-        padding-top: 1vh;
         font-size: 3vh;
         height: 70%;
     }

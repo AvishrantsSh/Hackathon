@@ -6,7 +6,7 @@
 {%endblock title%}
 
 {%block link%}
-    <link rel="stylesheet" href="{%static 'style/h_details_change.css'%}?v=1.1">
+    <link rel="stylesheet" href="{%static 'style/h_details_change.css'%}?v=1.2">
 {%endblock link%}
 
 {%block content%}
@@ -20,9 +20,14 @@
 <div id="form_container">
 <form method="post">
     {% csrf_token %}
+
+
         {%for i in form%}
             {{i.label_tag}}
+            <br>
             {{i}}
+            <br>
+            <br>
         {%endfor%}
    
     <input type="submit" value="Save" />

@@ -1,4 +1,12 @@
 
+textarea, input{
+	background-color: rgba(0,0,0, 0.1);
+	border-radius:10px; 
+	border-width: 1px;
+	font-size: 2vh;
+	max-width: 80%;
+}
+
 #heading_container{
 	border-bottom: solid;
 	border-radius: 3vw;
@@ -12,8 +20,12 @@
 	margin:0;
 }
 
+#mbody{
+	height: 100%;
+}
+
 #form_container{
-	padding-left: 3vw;
+	padding-left: 4vw;
 	padding-top: 2vh;
-	width: 150px;
+	font-size: 2.5vh;
 }
