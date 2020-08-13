@@ -128,3 +128,51 @@
 #img{
     width:80%;
 }
+
+#end_sec{
+	background-color: rgba(207,0,6,0.5);
+	color: white;
+	padding: 2vh;
+	height: 4vh;
+	font-size: 3vh;
+	font-family: Poiret One, sans-serif;
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	#tech_sec{
+		text-align: center;
+		align-content: center;
+	}
+
+	#tech_container{
+		width: 80%;
+		padding-left: 6vh;
+	}
+
+	#tech1{
+		width: 80%;
+		font-size: 2vh;
+	}
+
+	#tech2{
+		grid-column: 1;
+		width: 80%;
+		font-size: 2vh;
+	}
+
+	#tech3{
+		grid-column: 1;
+		width: 80%;
+		font-size: 2vh;
+	}
+
+	#img{
+    	width: 40%;
+	}
+
+	#tech_head2{
+		font-size: 3vh;
+	}
+}
