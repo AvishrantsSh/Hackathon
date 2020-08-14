@@ -12,7 +12,7 @@ class Hospital_Records(models.Model):
     crecovered = models.IntegerField(default=0)
     cfatalities = models.IntegerField(default=0)
     ventilator = models.PositiveIntegerField(default=10)
-    ppe = models.PositiveIntegerField()
+    ppe = models.PositiveIntegerField(default=0)
     blood = models.CharField(default='[0,0,0,0,0,0,0,0]', max_length=40)
 
     def __str__(self):
