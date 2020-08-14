@@ -11,6 +11,9 @@ class Hospital_Records(models.Model):
     ctotal = models.IntegerField(default=0)
     crecovered = models.IntegerField(default=0)
     cfatalities = models.IntegerField(default=0)
+    ventilator = models.PositiveIntegerField(default=10)
+    ppe = models.PositiveIntegerField()
+    blood = models.CharField(default='[0,0,0,0,0,0,0,0]', max_length=40)
 
     def __str__(self):
         return self.name

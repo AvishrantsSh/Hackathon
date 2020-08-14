@@ -55,7 +55,7 @@ class AllRecords(generic.ListView):
 def newdt(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-        if data['h_name'] and data['age'] and data['action'] and data['bed_type']:
+        if data['h_name'] and data['age'] and data['action'] and data['bed_type'] and data['vent']:
             record = Hospital_Records.objects.get(name=data['h_name'])
             if data['cp'] == 'Y':
                 record.ctotal += 1
@@ -70,8 +70,9 @@ def newdt(request):
 
             elif data['bed_type']=='Isolation':
                 tmp[2] -= 1
-
             record.available = tmp
+            if data['vent'] == 'Y':
+                record.ventilator -= 1
             record.save()
             # Record Stuff
             sympt = data['symptoms'].split(' ')
