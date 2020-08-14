@@ -71,7 +71,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Hackathon.wsgi.application'
 
-
+## python3 manage.py makemigrations
+## python3 manage.py migrate
+##
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 

@@ -67,18 +67,12 @@
             {%if object%}
             <table id = "issuetable">
                 <tr class="theader">
-                    <th style="width:20%;">Name <input type="text" id="name" onkeyup="filter_by_name()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
-                    <th style="width:15%;">Region<input type="text" id="reg" onkeyup="filter_by_reg()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
-                    <th style="width:15%;">Country<input type="text" id="country" onkeyup="filter_by_country()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
-                    <th style="width:10%;">Bed Capacity</th>
-                    <th style="width:10%;">Available</th>
-                    <th style="width:10%;">Total cases</th>
-                    <th style="width:10%;">Recovered</th>
-                    <th style="width:10%;">Deaths</th>
-
-
-                    
-                </tr>
+                    <th style="width:30%;">Name <input type="text" id="name" onkeyup="filter_by_name()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
+                    <th style="width:20%;">Region<input type="text" id="reg" onkeyup="filter_by_reg()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
+                    <th style="width:20%;">Country<input type="text" id="country" onkeyup="filter_by_country()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
+                    <th style="width:15%;">Bed_Capacity</th>
+                    <th style="width:15%;">Available</th>
+               </tr>
             {%for i in object%}
                 <tr>
                     <td>
@@ -95,15 +89,6 @@
                     </td>
                     <td>
                         {{i.available}}
-                    </td>
-                    <td>
-                        {{i.total}}
-                    </td>
-                    <td>
-                        {{i.recovered}}
-                    </td>
-                    <td>
-                        {{i.fatalities}}
                     </td>
                 </tr>
 
