@@ -79,7 +79,13 @@ def newdt(request):
             history = data['history'].split(' ')
             Records.objects.create(age = data['age'], b_group=data['b'], symptoms= sympt, medical_history=history)
             return HttpResponse("Data Received")
-    
+
+        elif data['h_name'] and data['ppe'] and data['blood']:
+            record = Hospital_Records.objects.get(name=data['h_name'])
+            record.ppe = int(data['ppe'])
+            record.blood = list(map(int, data['blood'].split(' ')))
+            record.save()
+
         # except:    
         #     return HttpResponse("I Ka Bhej Diye Ho "+ str(request.user))
     
