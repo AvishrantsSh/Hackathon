@@ -1,5 +1,5 @@
 
-const CACHE = 'cache_v126';
+const CACHE = 'cache_v621j';
 const filestoCache = ['/static/noconn.html',
                       'https://cdn.plot.ly/plotly-latest.min.js',
                       '/static/style/basestyle.css',
@@ -10,6 +10,8 @@ const filestoCache = ['/static/noconn.html',
                       '/static/images/assets/Pushpdeep.jpg',
                       '/static/images/icons/avatar.svg',
                       '/static/images/icons/avatar.png',
+                      '/static/images/icons/icon.svg',
+                      '/static/images/icons/icon_colour.svg',
 ]
 const offlineURL = ['/static/noconn.html']
 

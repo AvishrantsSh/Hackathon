@@ -1,19 +1,22 @@
 {
-    "name": "Test",
-    "short_name": "chhotaTest",
+    "name": "Hosportal",
+    "short_name": "Hosportal",
     "start_url": "/",
     "scope": ".",
     "display": "standalone",
     "background_color": "#FFF",
     "theme_color": "#493174",
-    "description": "Application for Test Site",
+    "description": "Web-Application for Hosportal Site",
     "dir": "ltr",
     "lang": "en-US",
     "orientation": "portrait-primary",
-    "icons": [{
-        "src": "/static/images/icons/full_icon.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "maskable any"
-    }]
+    
+    "icons": [
+        {
+          "src": "/static/images/icons/icon_colour.png",
+          "type": "image/png",
+          "sizes": "512x512",
+          "purpose": "maskable any"
+        }        
+      ]
 }
