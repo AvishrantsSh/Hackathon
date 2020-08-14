@@ -85,6 +85,7 @@ def newdt(request):
             record.ppe = int(data['ppe'])
             record.blood = list(map(int, data['blood'].split(' ')))
             record.save()
+            return HttpResponse("Data Received")
 
         # except:    
         #     return HttpResponse("I Ka Bhej Diye Ho "+ str(request.user))
