@@ -60,7 +60,7 @@ def newdt(request):
             record.available -= 1
             record.ctotal += 1
             tmp = record.available[1:-1].split(',')
-            tmp = map(int, tmp)
+            tmp = list(map(int, tmp))
             if data['bed_type']=='General':
                 tmp[0] -= 1
             
