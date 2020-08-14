@@ -54,30 +54,29 @@ class AllRecords(generic.ListView):
 @csrf_exempt
 def newdt(request):
     if request.method == 'POST':
-        try:
-            data = json.loads(request.body)
-            if data['h_name'] and data['age'] and data['action'] and data['bed_type']:
-                record = Hospital_Records.objects.get(name=data['h_name'])
-                record.available -= 1
-                record.ctotal += 1
-                tmp = record.available[1:-1].split(',')
-                tmp = int(tmp)
-                if data['bed_type']=='General':
-                    tmp[0] -= 1
-                
-                elif data['bed_type']=='Emergency':
-                    tmp[1] -= 1
+        data = json.loads(request.body)
+        if data['h_name'] and data['age'] and data['action'] and data['bed_type']:
+            record = Hospital_Records.objects.get(name=data['h_name'])
+            record.available -= 1
+            record.ctotal += 1
+            tmp = record.available[1:-1].split(',')
+            tmp = int(tmp)
+            if data['bed_type']=='General':
+                tmp[0] -= 1
+            
+            elif data['bed_type']=='Emergency':
+                tmp[1] -= 1
 
-                elif data['bed_type']=='Isolation':
-                    tmp[2]
+            elif data['bed_type']=='Isolation':
+                tmp[2]
 
-                record.save()
-                # Record Stuff
-                Records.objects.create(age = data['age'], status= data['action'], medical_history=data['old_dis'])
-                return HttpResponse("Nice Boi")
-        
-        except:    
-            return HttpResponse("I Ka Bhej Diye Ho "+ str(request.user))
+            record.save()
+            # Record Stuff
+            Records.objects.create(age = data['age'], status= data['action'], medical_history=data['old_dis'])
+            return HttpResponse("Nice Boi")
+    
+        # except:    
+        #     return HttpResponse("I Ka Bhej Diye Ho "+ str(request.user))
     
     return HttpResponse("Lag Gaye")
 
