@@ -57,7 +57,6 @@ def newdt(request):
         data = json.loads(request.body)
         if data['h_name'] and data['age'] and data['action'] and data['bed_type']:
             record = Hospital_Records.objects.get(name=data['h_name'])
-            record.available -= 1
             record.ctotal += 1
             tmp = record.available[1:-1].split(',')
             tmp = list(map(int, tmp))
