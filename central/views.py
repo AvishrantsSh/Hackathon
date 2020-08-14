@@ -35,7 +35,7 @@ class H_Details(generic.DetailView):
 class Details_change(generic.UpdateView):
     model=Hospital_Records
     template_name='h_details_change.html'
-    fields=['name','address','bed_capacity','ventilators','ppe']
+    fields=['name','address','bed_capacity','ventilator','ppe']
     def get_object(self):
         user = self.request.user
         if str(user)!= "AnonymousUser":
@@ -97,17 +97,17 @@ def newdt(request):
 def random_gen(request):
     if request.method == 'POST':
         for i in range (10):
-            Hospital_Records.objects.create(name = chr(i+65), address=chr(i+97), bed_capacity=[random.randrange(50,200,10),random.randrange(50,200,10),random.randrange(50,200,10)])
+            Hospital_Records.objects.create(name = chr(i+65), address=chr(i+97), bed_capacity=[random.randrange(50,200,10),random.randrange(50,200,10),random.randrange(50,200,10)], blood=[50,100,23,56,213,67,36,67])
             User.objects.create_user(
                                         username= chr(i+65),
                                         email= 'sample@email.co.uk',
                                         password="hocuspocus"
                                     ).save()
             
-        # for i in range(1000):
-        #     Records.objects.create(age=random.randrange(18,78), medical_history=",".join([random.choice(['0','1']) for k in range(7)]), status=random.choice(["Admitted","Released","Death"]))
+        for i in range(100):
+            Records.objects.create(age=random.randrange(18,78), b_group="B+", symptoms="['Bahut', 'dard', 'hai']", medical_history="['Bahut', 'dard', 'thi']")
         
-        return HttpResponse('home')
+        return HttpResponseRedirect(reverse('home'))
 
-    return HttpResponse('home')
+    return HttpResponseRedirect(reverse('home'))
 # Create your views here.

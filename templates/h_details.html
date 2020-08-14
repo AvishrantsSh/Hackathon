@@ -23,24 +23,30 @@
 		<div id = "left_dash">
 			<p id = "text">Name of Hospital: {{object.name}}<br></p>
 			<p id = "text">Address: {{object.address}}<br></p>
-			<p id = "text">Total Bed Capacity: 
-				{% for type, units in object.bed_capacity|bed}
+			<p id = "text">Total Bed Capacity:<br>
+				{%with a=object.bed_capacity|bed%} 
+				{% for type, units in a.items%}
 					{{type}}:{{units}}<br>
 				{%endfor%}
+				{%endwith%}
 				<br>
 			</p>
-			<p id = "text">Available Beds: 
-				{% for type, units in object.available|bed}
+			<p id = "text">Available Beds: <br>
+				{%with a=object.available|bed%} 
+				{% for type, units in a.items%}
 					{{type}}:{{units}}<br>
 				{%endfor%}
+				{%endwith%}
 				<br>
 			</p>
-			<p id = "text">Ventilators Available: {{object.available}}<br></p>
-			<p id = "text">PPE Kits: {{object.available}}<br></p>
-			<p id = "text">Blood Units: 
-				{% for type, units in object.available|blood}
+			<p id = "text">Ventilators Available: {{object.ventilator}}<br></p>
+			<p id = "text">PPE Kits: {{object.ppe}}<br></p>
+			<p id = "text">Blood Units: <br>
+				{%with a=object.blood|bed%} 
+				{% for type, units in a.items%}
 					{{type}}:{{units}}<br>
 				{%endfor%}
+				{%endwith%}
 				<br>
 			</p>
 			

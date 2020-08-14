@@ -17,7 +17,7 @@ def bed(value):
 def blood(value):
     try:
         lst = list(map(int, value[1:-1].split(',')))
-        bed = {
+        blood = {
                 "A+":lst[0],
                 "AB+":lst[1],
                 "B+":lst[2],
@@ -27,7 +27,7 @@ def blood(value):
                 "B-":lst[1],
                 "O-":lst[2]
                 }
-        return bed
+        return blood
     
     except:
         return None
