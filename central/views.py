@@ -55,42 +55,44 @@ class AllRecords(generic.ListView):
 def newdt(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-        if data['h_name'] and data['age'] and data['action'] and data['bed_type'] and data['vent']:
-            record = Hospital_Records.objects.get(name=data['h_name'])
-            if data['cp'] == 'Yes':
-                record.ctotal += 1
+        try:
+            if data['h_name'] and data['age'] and data['action'] and data['bed_type'] and data['vent']:
+                record = Hospital_Records.objects.get(name=data['h_name'])
+                if data['cp'] == 'Yes':
+                    record.ctotal += 1
 
-            tmp = record.available[1:-1].split(',')
-            tmp = list(map(int, tmp))
-            if data['bed_type']=='General':
-                tmp[0] -= 1
-            
-            elif data['bed_type']=='Emergency':
-                tmp[1] -= 1
+                tmp = record.available[1:-1].split(',')
+                tmp = list(map(int, tmp))
+                if data['bed_type']=='General':
+                    tmp[0] -= 1
+                
+                elif data['bed_type']=='Emergency':
+                    tmp[1] -= 1
 
-            elif data['bed_type']=='Isolation':
-                tmp[2] -= 1
-            record.available = tmp
-            if data['vent'] == 'Yes':
-                record.ventilator -= 1
-            record.save()
-            # Record Stuff
-            sympt = data['symptoms'].split(' ')
-            history = data['history'].split(' ')
-            Records.objects.create(age = data['age'], b_group=data['b'], symptoms= sympt, medical_history=history)
-            return HttpResponse("Data Received")
+                elif data['bed_type']=='Isolation':
+                    tmp[2] -= 1
+                record.available = tmp
+                if data['vent'] == 'Yes':
+                    record.ventilator -= 1
+                record.save()
+                # Record Stuff
+                sympt = data['symptoms'].split(' ')
+                history = data['history'].split(' ')
+                Records.objects.create(age = data['age'], b_group=data['b'], symptoms= sympt, medical_history=history)
+                return HttpResponse("Data Received")
+        except:
+            try: 
+                if data['h_name'] and data['ppe'] and data['blood']:
+                    record = Hospital_Records.objects.get(name=data['h_name'])
+                    record.ppe = int(data['ppe'])
+                    record.blood = list(map(int, data['blood'].split(' ')))
+                    record.save()
+                    return HttpResponse("Data Received")
 
-        elif data['h_name'] and data['ppe'] and data['blood']:
-            record = Hospital_Records.objects.get(name=data['h_name'])
-            record.ppe = int(data['ppe'])
-            record.blood = list(map(int, data['blood'].split(' ')))
-            record.save()
-            return HttpResponse("Data Received")
-
-        # except:    
-        #     return HttpResponse("I Ka Bhej Diye Ho "+ str(request.user))
+            except:    
+                return HttpResponse("Application Error")
     
-    return HttpResponse("Lag Gaye")
+        return HttpResponse("Invalid Format")
 
 def random_gen(request):
     if request.method == 'POST':
