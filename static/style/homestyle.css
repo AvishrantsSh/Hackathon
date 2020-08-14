@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
 
+#mbody{
+    background-image: url("../images/assets/Hola.svg");
+    background-repeat: no-repeat;
+    background-size: 100vw;
+}
+
 .home_container{
     text-align: center;
+
 }
 
 #title_sec{

@@ -9,14 +9,14 @@
         
             {%endblock title%}
         </title>
-        <!-- <link href="{%static 'img/favicon.png'%}" type="image/png" rel="icon">
-        <link href="{%static 'img/favicon.png'%}" type="image/png" rel="shortcut icon"> -->
+        <link href="{%static 'images/icons/full_icon.png'%}" type="image/png" rel="icon">
+        <link href="{%static 'images/icons/icon_colour.svg'%}" type="image/png" rel="shortcut icon">
         <meta charset="UTF-8">
         <meta name="description" content="To Infinity and Beyond">
         <meta name="keywords" content="Donation, Funds, Uphaar">
         <meta name="author" content="Avishrant Sharma">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" href="{%static 'style/basestyle.css'%}" type="text/css">
+        <link rel="stylesheet" href="{%static 'style/basestyle.css'%}?v=1.1" type="text/css">
         
         <!-- Path to manifest.json -->
         <link rel="manifest" href="/manifest.json">
@@ -52,7 +52,12 @@
     <body>
         <div id="header">
             <div id="top_head">
-                <a href="{%url 'home'%}">Pandemic Anlaysis</a>
+                <div id="icon_head">
+                <img src="{%static 'images/icons/icon.svg'%}" id="icon">
+                </div>
+                <div id="main">
+                <a href="{%url 'home'%}">Hosportal</a>
+                </div>
             </div>
             <div id='nav-container'>
                 <div class="button" tabindex="0">

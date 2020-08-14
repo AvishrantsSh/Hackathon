@@ -8,12 +8,14 @@ body{
     box-sizing: border-box;
 
 }
+
 a{
     text-decoration: none;
     color: inherit;
     margin: 1vw;
 
 }
+
 #header{
     width: 100%;
     display: grid;
@@ -23,10 +25,24 @@ a{
 
 #top_head{
     box-sizing: border-box;
-    padding-top: 0.5vh;
     color: white;
     font-size: 5.5vh;
     grid-column: 1;
+    display: inline-flex;
+}
+
+#icon{
+    width: 7.5vh;
+    padding: 1vh;
+    padding-left: 2vh;
+}
+
+#icon_head{
+    width: 80px;
+}
+
+#main{
+    padding: 2vh;
 }
 
 #link_head{
@@ -97,8 +113,17 @@ a{
         height: 70%;
         text-align: center;
         grid-column: 2;
-        
     }
+
+    #icon{
+        width: 5vh;
+        padding: 1vh;
+    }
+
+    #icon_head{
+        width: 55px;
+    }
+
     #misc{
         grid-column: 3;
 

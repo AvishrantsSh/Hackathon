@@ -11,7 +11,7 @@
     "lang": "en-US",
     "orientation": "portrait-primary",
     "icons": [{
-        "src": "/static/images/icons/avatar.png",
+        "src": "/static/images/icons/full_icon.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable any"

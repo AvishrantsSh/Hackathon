@@ -10,15 +10,29 @@
 	margin:0;
 }
 
+#second_head{
+	font-family: overpass;
+	font-size: 2.8vh;
+	margin:0;
+}
 
 #dash_container{
 	margin-top: 3vh;
 	display: grid;
+	padding-left: 3vw;
+	padding-bottom: 3vh;
 }
 
 #left_dash{
 	grid-column: 1;
-	width: 40vw;
+}
+
+#center_dash{
+	grid-column: 2;
+}
+
+#right_dash{
+	grid-column: 3;
 }
 
 #heading_container{
@@ -35,3 +49,24 @@
 #edit{
 	text-decoration: underline;
 }
+
+
+@media only screen and (max-width: 768px) {
+
+	#center_dash{
+		padding-top: 3vh;
+		grid-column: 1;
+
+	}	
+
+	#right_dash{
+		padding-top: 3vh;
+		grid-column: 1;
+
+	}
+
+	#dynamic, #basic, #blood_bank{
+		padding-left: 3vh;
+	}
+}
+
