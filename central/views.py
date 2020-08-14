@@ -57,7 +57,7 @@ def newdt(request):
         data = json.loads(request.body)
         if data['h_name'] and data['age'] and data['action'] and data['bed_type'] and data['vent']:
             record = Hospital_Records.objects.get(name=data['h_name'])
-            if data['cp'] == 'Y':
+            if data['cp'] == 'Yes':
                 record.ctotal += 1
 
             tmp = record.available[1:-1].split(',')
@@ -71,7 +71,7 @@ def newdt(request):
             elif data['bed_type']=='Isolation':
                 tmp[2] -= 1
             record.available = tmp
-            if data['vent'] == 'Y':
+            if data['vent'] == 'Yes':
                 record.ventilator -= 1
             record.save()
             # Record Stuff
