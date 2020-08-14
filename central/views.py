@@ -72,7 +72,7 @@ def newdt(request):
             record.available = tmp
             record.save()
             # Record Stuff
-            Records.objects.create(age = data['age'], status= data['action'], medical_history=data['old_dis'])
+            # Records.objects.create(age = data['age'], status= data['action'], medical_history=data['old_dis'])
             return HttpResponse("Nice Boi")
     
         # except:    
