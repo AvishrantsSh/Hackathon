@@ -4,7 +4,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from .models import Hospital_Records, Records
 from django.views import generic
 import json, random
-# from central.gcovid_ind import Covid_map
+from central.gcovid_ind import Covid_map
 from django.contrib.auth import get_user_model
 User=get_user_model()
 
@@ -13,11 +13,11 @@ class GenStats_View(generic.TemplateView):
     template_name = 'stats.html'
     context_object_name = 'records'
     
-    # def get_context_data(self, **kwargs):
-    #     context = super(GenStats_View, self).get_context_data(**kwargs)
-    #     obj = Covid_map()
-    #     context['graph'], context['ttotal'], context['trecover'], context['tdeath'], context['dtotal'], context['drecover'], context['ddeath'] = obj.get_stats()
-    #     return context       
+    def get_context_data(self, **kwargs):
+        context = super(GenStats_View, self).get_context_data(**kwargs)
+        obj = Covid_map()
+        context['graph'], context['ttotal'], context['trecover'], context['tdeath'], context['dtotal'], context['drecover'], context['ddeath'] = obj.get_stats()
+        return context       
 
 class H_Details(generic.DetailView):
     model=Hospital_Records
