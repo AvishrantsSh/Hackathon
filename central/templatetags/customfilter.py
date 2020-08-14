@@ -19,13 +19,13 @@ def blood(value):
         lst = list(map(int, value[1:-1].split(',')))
         blood = {
                 "A+":lst[0],
-                "AB+":lst[1],
+                "O+":lst[1],
                 "B+":lst[2],
-                "O+":lst[0],
+                "AB+":lst[0],
                 "A-":lst[1],
-                "AB-":lst[2],
+                "O-":lst[2],
                 "B-":lst[1],
-                "O-":lst[2]
+                "AB-":lst[2]
                 }
         return blood
     

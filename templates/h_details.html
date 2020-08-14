@@ -42,7 +42,7 @@
 			<p id = "text">Ventilators Available: {{object.ventilator}}<br></p>
 			<p id = "text">PPE Kits: {{object.ppe}}<br></p>
 			<p id = "text">Blood Units: <br>
-				{%with a=object.blood|bed%} 
+				{%with a=object.blood|blood%} 
 				{% for type, units in a.items%}
 					{{type}}:{{units}}<br>
 				{%endfor%}
