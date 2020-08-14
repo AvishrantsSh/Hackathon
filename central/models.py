@@ -16,15 +16,10 @@ class Hospital_Records(models.Model):
         return self.name
    
 class Records(models.Model):
-    choice = [
-        ("Admitted","Admitted"),
-        ("Released","Released"),
-        ("Death","Death")
-    ]
     age = models.IntegerField()
+    b_group = models.CharField(default='', max_length=5)
     symptoms = models.CharField(max_length=100, default='[]')
     medical_history = models.CharField(max_length=100, default='[]')
-    status = models.CharField(max_length=10, choices=choice)
 
    
     # Create your models here.

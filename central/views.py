@@ -57,7 +57,9 @@ def newdt(request):
         data = json.loads(request.body)
         if data['h_name'] and data['age'] and data['action'] and data['bed_type']:
             record = Hospital_Records.objects.get(name=data['h_name'])
-            record.ctotal += 1
+            if data['cp'] == 'Y':
+                record.ctotal += 1
+
             tmp = record.available[1:-1].split(',')
             tmp = list(map(int, tmp))
             if data['bed_type']=='General':
@@ -74,8 +76,8 @@ def newdt(request):
             # Record Stuff
             sympt = data['symptoms'].split(' ')
             history = data['history'].split(' ')
-            Records.objects.create(age = data['age'], status= data['action'], symptoms= sympt, medical_history=history)
-            return HttpResponse("Nice Boi")
+            Records.objects.create(age = data['age'], b_group=data['b'], symptoms= sympt, medical_history=history)
+            return HttpResponse("Data Received")
     
         # except:    
         #     return HttpResponse("I Ka Bhej Diye Ho "+ str(request.user))
