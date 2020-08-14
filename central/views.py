@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from .models import Hospital_Records, Records
 from django.views import generic
-# import json, random
+import json, random
 # from central.gcovid_ind import Covid_map
 from django.contrib.auth import get_user_model
 User=get_user_model()
