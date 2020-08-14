@@ -1,13 +1,13 @@
 django
 gunicorn
 django-heroku
-# plotly
-# pandas
-# fbprophet
-# numpy 
-# scipy
-# nbformat
-# matplotlib
-# requests
+plotly
+pandas
+fbprophet
+numpy 
+scipy
+nbformat
+matplotlib
+requests
 
 

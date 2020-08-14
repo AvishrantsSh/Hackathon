@@ -1,4 +1,5 @@
 {%extends 'base.html'%}
+{%load customfilter%}
 {%load static%}
 
 {%block title%}
@@ -22,8 +23,27 @@
 		<div id = "left_dash">
 			<p id = "text">Name of Hospital: {{object.name}}<br></p>
 			<p id = "text">Address: {{object.address}}<br></p>
-			<p id = "text">Total Bed Capacity: {{object.bed_capacity}}<br></p>
-			<p id = "text">Available Beds: {{object.available}}<br></p>
+			<p id = "text">Total Bed Capacity: 
+				{% for type, units in object.bed_capacity|bed}
+					{{type}}:{{units}}<br>
+				{%endfor%}
+				<br>
+			</p>
+			<p id = "text">Available Beds: 
+				{% for type, units in object.available|bed}
+					{{type}}:{{units}}<br>
+				{%endfor%}
+				<br>
+			</p>
+			<p id = "text">Ventilators Available: {{object.available}}<br></p>
+			<p id = "text">PPE Kits: {{object.available}}<br></p>
+			<p id = "text">Blood Units: 
+				{% for type, units in object.available|blood}
+					{{type}}:{{units}}<br>
+				{%endfor%}
+				<br>
+			</p>
+			
 		</div>
 
 		
