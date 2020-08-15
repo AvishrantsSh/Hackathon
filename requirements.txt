@@ -1,6 +1,7 @@
 django
 gunicorn
 django-heroku
+apscheduler
 plotly
 pandas
 fbprophet

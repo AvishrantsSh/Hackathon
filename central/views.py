@@ -3,6 +3,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from .models import Hospital_Records, Records
 from django.views import generic
+from django.core import serializers
+
 import json, random
 from central.gcovid_ind import Covid_map
 from django.contrib.auth import get_user_model
@@ -16,7 +18,7 @@ class GenStats_View(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(GenStats_View, self).get_context_data(**kwargs)
         obj = Covid_map()
-        context['graph'], context['ttotal'], context['trecover'], context['tdeath'], context['dtotal'], context['drecover'], context['ddeath'] = obj.get_stats()
+        context['graph'], context['ttotal'], context['trecover'], context['tdeath'], context['dtotal'], context['drecover'], context['ddeath'] = obj.get()
         return context       
 
 class H_Details(generic.DetailView):
@@ -61,7 +63,7 @@ def newdt(request):
                 if data['cp'] == 'Yes':
                     record.ctotal += 1
 
-                tmp = record.available[1:-1].split(',')
+                tmp = record.available.split(',')
                 tmp = list(map(int, tmp))
                 if data['bed_type']=='General':
                     tmp[0] -= 1
@@ -71,13 +73,15 @@ def newdt(request):
 
                 elif data['bed_type']=='Isolation':
                     tmp[2] -= 1
-                record.available = tmp
+                record.available = ','.join(tmp)
                 if data['vent'] == 'Yes':
                     record.ventilator -= 1
                 record.save()
                 # Record Stuff
                 sympt = data['symptoms'].split(' ')
+                sympt = ','.join(sympt)
                 history = data['history'].split(' ')
+                sympt = ','.join(history)
                 Records.objects.create(age = data['age'], b_group=data['b'], symptoms= sympt, medical_history=history)
                 return HttpResponse("Data Received")
         except:
@@ -85,7 +89,7 @@ def newdt(request):
                 if data['h_name'] and data['ppe'] and data['blood']:
                     record = Hospital_Records.objects.get(name=data['h_name'])
                     record.ppe = int(data['ppe'])
-                    record.blood = list(map(int, data['blood'].split(' ')))
+                    record.blood = list(map(int, ','.join(data['blood'].split(' '))))
                     record.save()
                     return HttpResponse("Data Received")
 
@@ -105,9 +109,25 @@ def random_gen(request):
                                     ).save()
             
         for i in range(100):
-            Records.objects.create(age=random.randrange(18,78), b_group="B+", symptoms="['Bahut', 'dard', 'hai']", medical_history="['Bahut', 'dard', 'thi']")
+            Records.objects.create(age=random.randrange(18,78), b_group="B+", symptoms="Bahut,dard,hai", medical_history="Bahut,dard,thi")
         
         return HttpResponseRedirect(reverse('home'))
 
     return HttpResponseRedirect(reverse('home'))
+
+def Fetchdata(request):
+    records_all = Records.objects.all()
+    record_list = serializers.serialize('json', records_all, fields=('age','b_group','symptoms','medical_history'))
+    data = json.loads(record_list)
+    tmp=[]
+    for d in data:
+        del d['pk']
+        del d['model']
+        tmp.append(d['fields'])
+    
+    tmp = ','.join(str(t) for t in tmp)
+    cleaned_response = {'Data':tmp}
+    json_file=json.dumps(cleaned_response)
+    return HttpResponse(json_file, content_type="application/json")
+
 # Create your views here.

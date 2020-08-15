@@ -13,16 +13,22 @@ import plotly.graph_objs as go
 class Covid_map(object):
     def __init__(self):
         self.link = "https://api.covid19india.org/data.json"
-        
-    def get_stats(self):
+    
+    def get(self):
         module_dir = os.path.dirname(__file__)  
         file_path = os.path.join(module_dir, 'temp.txt')
         fobj = open(file_path, "r+")
         flist = fobj.read().split('$')
-        self.today = date.today()
-        if str(flist[0])[5:] == str(self.today):
-            fobj.close()
-            return str(flist[1])[5:], str(flist[2])[7:],str(flist[3])[11:],str(flist[4])[10:],str(flist[5])[7:],str(flist[6])[11:],str(flist[7])[10:], 
+        if len(flist) < 7:
+            self.load_stats()
+
+        fobj.close()
+        return str(flist[1])[5:], str(flist[2])[7:],str(flist[3])[11:],str(flist[4])[10:],str(flist[5])[7:],str(flist[6])[11:],str(flist[7])[10:]
+
+    def load_stats(self):
+        module_dir = os.path.dirname(__file__)  
+        file_path = os.path.join(module_dir, 'temp.txt')
+        fobj = open(file_path, "r+")
         
         self.get_data()
         self.normalise()
@@ -34,12 +40,12 @@ class Covid_map(object):
                     "$TDeceased:"+str(self.deceased)+
                     "$DTotal:"+str(self.tchange)+
                     "$DRecovered:"+str(self.rchange)+
-                    "$DDeceased:"+str(self.dchange)
+                    "$DDeceased:"+str(self.dchange)+
+                    "$Update_Time:"+str(datetime.now().time())
                     )
 
         fobj.truncate()
         fobj.close()
-        return data, self.total, self.recovered, self.deceased, self.tchange, self.rchange, self.dchange
 
     def func_logistic(self, t, a, b, c):
         return c / (1 + a * np.exp(-b*t))

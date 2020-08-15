@@ -8,6 +8,7 @@ urlpatterns = [
     path('stats/general', views.GenStats_View.as_view(), name='gstats'),
     path('add/',views.newdt,name='add'),
     path('details/',views.H_Details.as_view(), name='details'),
+    path('research/data',views.Fetchdata, name='data'),
     path('change/',views.Details_change.as_view(), name='change'),
     path('records/all/', views.AllRecords.as_view(), name='all_records'),
     path('random/', views.random_gen, name='random'),

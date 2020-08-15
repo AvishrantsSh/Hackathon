@@ -6,14 +6,14 @@ class Hospital_Records(models.Model):
     address = models.TextField()
     region = models.CharField(default='', max_length=20)
     country = models.CharField(default='India', max_length=20)
-    bed_capacity = models.CharField(default='[0,0,0]', max_length=20)
-    available = models.CharField(default='[0,0,0]', max_length=20)
+    bed_capacity = models.CharField(default='0,0,0', max_length=20)
+    available = models.CharField(default='0,0,0', max_length=20)
     ctotal = models.IntegerField(default=0)
     crecovered = models.IntegerField(default=0)
     cfatalities = models.IntegerField(default=0)
     ventilator = models.PositiveIntegerField(default=10)
     ppe = models.PositiveIntegerField(default=0)
-    blood = models.CharField(default='[0,0,0,0,0,0,0,0]', max_length=40)
+    blood = models.CharField(default='0,0,0,0,0,0,0,0', max_length=40)
 
     def __str__(self):
         return self.name

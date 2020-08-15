@@ -6,7 +6,7 @@ register = template.Library()
 @register.filter
 def bed(value):
     try:
-        lst = list(map(int, value[1:-1].split(',')))
+        lst = list(map(int, value.split(',')))
         bed = {"General":lst[0], "Emergency":lst[1], "Isolation":lst[2]}
         return bed
 
@@ -16,7 +16,7 @@ def bed(value):
 @register.filter
 def blood(value):
     try:
-        lst = list(map(int, value[1:-1].split(',')))
+        lst = list(map(int, value.split(',')))
         blood = {
                 "A+":lst[0],
                 "O+":lst[1],
