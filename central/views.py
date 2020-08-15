@@ -62,6 +62,11 @@ def newdt(request):
                 record = Hospital_Records.objects.get(name=data['h_name'])
                 if data['cp'] == 'Yes':
                     record.ctotal += 1
+                    sympt = data['symptoms'].split(' ')
+                    sympt = ','.join(sympt)
+                    history = data['history'].split(' ')
+                    sympt = ','.join(history)
+                    Records.objects.create(age = data['age'], b_group=data['b'], symptoms= sympt, medical_history=history)
 
                 tmp = record.available.split(',')
                 tmp = list(map(int, tmp))
@@ -78,11 +83,7 @@ def newdt(request):
                     record.ventilator -= 1
                 record.save()
                 # Record Stuff
-                sympt = data['symptoms'].split(' ')
-                sympt = ','.join(sympt)
-                history = data['history'].split(' ')
-                sympt = ','.join(history)
-                Records.objects.create(age = data['age'], b_group=data['b'], symptoms= sympt, medical_history=history)
+                
                 return HttpResponse("Data Received")
         except:
             try: 
