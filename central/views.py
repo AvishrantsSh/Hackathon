@@ -18,7 +18,7 @@ class GenStats_View(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(GenStats_View, self).get_context_data(**kwargs)
         obj = Covid_map()
-        context['graph'], context['ttotal'], context['trecover'], context['tdeath'], context['dtotal'], context['drecover'], context['ddeath'] = obj.get()
+        context['graph'], context['ttotal'], context['trecover'], context['tdeath'], context['dtotal'], context['drecover'], context['ddeath'] = obj.get_stats()
         return context       
 
 class H_Details(generic.DetailView):
@@ -58,7 +58,7 @@ def newdt(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         try:
-            if data['h_name'] and data['age'] and data['action'] and data['bed_type'] and data['vent']:
+            if data['h_name'] and data['age'] and data['action'] and data['bed_type'] and data['vent'] and data['symptoms'] and data['history'] and data['b']:
                 record = Hospital_Records.objects.get(name=data['h_name'])
                 if data['cp'] == 'Yes':
                     record.ctotal += 1
