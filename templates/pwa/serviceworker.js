@@ -1,12 +1,11 @@
 
-const CACHE = 'cache_v621j';
+const CACHE = 'cache_v6ds21j';
 const filestoCache = ['/static/noconn.html',
                       'https://cdn.plot.ly/plotly-latest.min.js',
                       '/static/style/basestyle.css',
                       '/static/style/homestyle.css',
                       '/static/style/statstyle.css',
                       '/static/style/loginstyle.css',
-
                       '/manifest.json',
                       '/static/images/assets/Avishrant.jpg',
                       '/static/images/assets/Kunal.jpg',
