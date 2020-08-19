@@ -1,14 +1,7 @@
-import calendar, os
-import pandas as pd
-from scipy.optimize import curve_fit
-import numpy as np
+import os
 from math import exp
 import requests, json
 from datetime import datetime, date
-from fbprophet import Prophet
-from fbprophet.plot import plot_plotly
-import plotly.offline as py
-import plotly.graph_objs as go
 
 class covid_stats(object):
     def __init__(self):
@@ -26,7 +19,7 @@ class covid_stats(object):
         jobj = dict(json.loads(fobj.read()))
         self.today = date.today()
         if str(jobj["Date"]) != str(self.today):
-            self.get_data(fobj)
+            self.get_data()
             
         fobj.close()
         return jobj["Data"], jobj["TTotal"],jobj["TRecovered"],jobj["TDeceased"],jobj["DTotal"],jobj["DRecovered"],jobj["DDeceased"]
