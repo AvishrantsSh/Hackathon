@@ -6,7 +6,7 @@
     All Records
 {%endblock title%}
 {%block link%}
-        <link rel="stylesheet" href="{%static 'style/recordstyle.css'%}">
+        <link rel="stylesheet" href="{%static 'style/recordstyle.css'%}?v=1.2">
         <script>
             function filter_by_name() {
                 var input, filter, table, tr, td, i;
@@ -66,13 +66,14 @@
     {%if user.is_authenticated%}
             <h2>All Records</h2>
                 {%if object%}
-                <div style="overflow-x: auto;">
+                <div>
+                    <div id="table_container">
                     <table id = "issuetable">
                         <tr class="theader">
                             <th style="width:20%;" rowspan="2">Name <input type="text" id="name" onkeyup="filter_by_name()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
-                            <th style="width:16%;" rowspan="2">Region<input type="text" id="reg" onkeyup="filter_by_reg()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
-                            <th style="width:16%;" rowspan="2">Country<input type="text" id="country" onkeyup="filter_by_country()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
-                            <th style="width:24%; text-align: center;" colspan="3">Bed_Capacity</th>
+                            <th style="width:12%;" rowspan="2">Region<input type="text" id="reg" onkeyup="filter_by_reg()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
+                            <th style="width:14%;" rowspan="2">Country<input type="text" id="country" onkeyup="filter_by_country()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
+                            <th style="width:24%; text-align: center;" colspan="3">Bed Capacity</th>
                             <th style="width:24%; text-align: center;" colspan="3">Available</th>
 
                         </tr>
@@ -119,6 +120,7 @@
 
                     {%endfor%}
                     </table>
+                </div>
                 </div>
             {%else%}
                     Nothing to Show

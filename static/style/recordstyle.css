@@ -1,3 +1,10 @@
+
+#table_container{
+  padding: 1vw;
+  text-align: center;
+}
+
+
 #issuetable{
     table-layout: fixed;
     word-break: break-word;
@@ -20,14 +27,17 @@ tr{
   #issuetable tr.tsubhead{
   background-color: #777;
   color: white;
-  font-size: 1.5vh;
+  font-size: 1.2vw;
 }
 
 #issuetable tr.theader:hover, #issuetable tr.tsubhead:hover{
     background-color: #777
   }
 
+#issuetable tr:nth-child(even){background-color: #f2f2f2;}
+
 #issuetable tr:hover {
+    font-size: 3vh;
     background-color: #999 ;
 }
 
@@ -41,6 +51,24 @@ tr{
 
   #issuetable{
       margin-top: 3vh;
-      font-size: 1.7vh;
+      font-size: 1.5vh;
+  }
+
+    #issuetable tr.tsubhead{
+      background-color: #777;
+      color: white;
+      font-size: 1vh;
+      padding: 0;
+  }
+
+  #issuetable tr:hover {
+    font-size: 1.6vh;
+    background-color: #999 ;
+}
+
+  th{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
   }
 }
