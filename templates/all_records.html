@@ -1,5 +1,7 @@
 {%extends 'base.html'%}
 {%load static%}
+{%load customfilter%}
+
 {%block title%}
     All Records
 {%endblock title%}
@@ -62,41 +64,65 @@
     
 {%block content%}
     {%if user.is_authenticated%}
-        <h2>All Records</h2>
-            {%if object%}
-            <table id = "issuetable">
-                <tr class="theader">
-                    <th style="width:30%;">Name <input type="text" id="name" onkeyup="filter_by_name()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
-                    <th style="width:20%;">Region<input type="text" id="reg" onkeyup="filter_by_reg()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
-                    <th style="width:20%;">Country<input type="text" id="country" onkeyup="filter_by_country()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
-                    <th style="width:15%;">Bed_Capacity</th>
-                    <th style="width:15%;">Available</th>
-               </tr>
-            {%for i in object%}
-                <tr>
-                    <td>
-                        {{i.name}}
-                    </td>
-                    <td>
-                        {{i.region}}
-                    </td>
-                    <td>
-                        {{i.country}}
-                    </td>
-                    <td>
-                        {{i.bed_capacity}}
-                    </td>
-                    <td>
-                        {{i.available}}
-                    </td>
-                </tr>
+            <h2>All Records</h2>
+                {%if object%}
+                <div style="overflow-x: auto;">
+                    <table id = "issuetable">
+                        <tr class="theader">
+                            <th style="width:20%;" rowspan="2">Name <input type="text" id="name" onkeyup="filter_by_name()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
+                            <th style="width:16%;" rowspan="2">Region<input type="text" id="reg" onkeyup="filter_by_reg()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
+                            <th style="width:16%;" rowspan="2">Country<input type="text" id="country" onkeyup="filter_by_country()" style="width: 10vw; max-width: 50px;" placeholder="-----"/></th>
+                            <th style="width:24%; text-align: center;" colspan="3">Bed_Capacity</th>
+                            <th style="width:24%; text-align: center;" colspan="3">Available</th>
 
-            {%endfor%}
-            </table>
+                        </tr>
+                        <tr class='tsubhead'>
+                            <th>General</th>
+                            <th>Emergency</th>
+                            <th>Isolation</th>
+                            <th>General</th>
+                            <th>Emergency</th>
+                            <th>Isolation</th>
+                        </tr>
 
-        {%else%}
-                Nothing to Show
-        {%endif%}
+                        {%for i in object%}
+                        <tr>
+                            <td>
+                                {{i.name}}
+                            </td>
+                            <td>
+                                {%if i.region%}
+                                    {{i.region}}
+                                {%else%}
+                                -
+                                {%endif%}
+                            </td>
+                            <td>
+                                {{i.country}}
+                            </td>
+                           
+                            {%with a=i.bed_capacity|bed%}
+                                {%for type,quant in a.items%}
+                                    <td>
+                                        {{quant}}
+                                    </td>
+                                {%endfor%}
+                            {%endwith%}
+                            {%with a=i.available|bed%}
+                                {%for type,quant in a.items%}
+                                    <td>
+                                        {{quant}}
+                                    </td>
+                                {%endfor%}
+                            {%endwith%}
+                        </tr>
+
+                    {%endfor%}
+                    </table>
+                </div>
+            {%else%}
+                    Nothing to Show
+            {%endif%}
     {%else%}
         <b>Error : </b>You do not have necessary permissions to view this content
     {%endif%}

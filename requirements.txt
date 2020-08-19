@@ -1,14 +1,7 @@
 django
 gunicorn
 django-heroku
-apscheduler
-plotly
-pandas
-fbprophet
-numpy 
-scipy
-nbformat
-matplotlib
 requests
+
 
 

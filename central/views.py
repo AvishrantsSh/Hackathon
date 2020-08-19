@@ -4,9 +4,8 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from .models import Hospital_Records, Records
 from django.views import generic
 from django.core import serializers
-
 import json, random
-from central.gcovid_ind import Covid_map
+from central.stats import covid_stats
 from django.contrib.auth import get_user_model
 User=get_user_model()
 
@@ -17,7 +16,7 @@ class GenStats_View(generic.TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super(GenStats_View, self).get_context_data(**kwargs)
-        obj = Covid_map()
+        obj = covid_stats()
         context['graph'], context['ttotal'], context['trecover'], context['tdeath'], context['dtotal'], context['drecover'], context['ddeath'] = obj.get_stats()
         return context       
 
@@ -102,7 +101,7 @@ def newdt(request):
 def random_gen(request):
     if request.method == 'POST':
         for i in range (10):
-            Hospital_Records.objects.create(name = chr(i+65), address=chr(i+97), bed_capacity=[random.randrange(50,200,10),random.randrange(50,200,10),random.randrange(50,200,10)], blood=[50,100,23,56,213,67,36,67])
+            Hospital_Records.objects.create(name = chr(i+65), address=chr(i+97), bed_capacity=','.join(str(i) for i in [random.randrange(50,200,10),random.randrange(50,200,10),random.randrange(50,200,10)]), blood=[50,100,23,56,213,67,36,67])
             User.objects.create_user(
                                         username= chr(i+65),
                                         email= 'sample@email.co.uk',
