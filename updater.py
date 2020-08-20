@@ -8,7 +8,7 @@ sched = BlockingScheduler()
 
 @sched.scheduled_job('interval', minutes=1)
 def timed_job():
-    print('This job is run every three minutes.')
+    print('Running scheduled Job')
     obj = covid_stats()
     obj.get_data()
 
