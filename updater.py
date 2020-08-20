@@ -6,7 +6,7 @@ from os import path
 from datetime import datetime
 sched = BlockingScheduler()
 
-@sched.scheduled_job('interval', minutes=1)
+@sched.scheduled_job('interval', hours=2)
 def timed_job():
     print('Running scheduled Job')
     obj = covid_stats()

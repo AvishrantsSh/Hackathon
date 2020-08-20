@@ -23,7 +23,7 @@ class covid_stats(object):
             self.get_data()
             
         fobj.close()
-        return jobj["Date"], jobj["Data"], jobj["TTotal"],jobj["TRecovered"],jobj["TDeceased"],jobj["DTotal"],jobj["DRecovered"],jobj["DDeceased"]
+        return jobj["Time"], jobj["Data"], jobj["TTotal"],jobj["TRecovered"],jobj["TDeceased"],jobj["DTotal"],jobj["DRecovered"],jobj["DDeceased"]
 
     def get_data(self):
         module_dir = os.path.dirname(__file__)  
