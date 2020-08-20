@@ -6,7 +6,7 @@
     All Records
 {%endblock title%}
 {%block link%}
-        <link rel="stylesheet" href="{%static 'style/recordstyle.css'%}?v=1.2">
+        <link rel="stylesheet" href="{%static 'style/recordstyle.css'%}?v=1.4">
         <script>
             function filter_by_name() {
                 var input, filter, table, tr, td, i;
@@ -78,12 +78,12 @@
 
                         </tr>
                         <tr class='tsubhead'>
-                            <th>General</th>
-                            <th>Emergency</th>
-                            <th>Isolation</th>
-                            <th>General</th>
-                            <th>Emergency</th>
-                            <th>Isolation</th>
+                            <th id = "subhead">General</th>
+                            <th id = "subhead">Emergency</th>
+                            <th id = "subhead">Isolation</th>
+                            <th id = "subhead">General</th>
+                            <th id = "subhead">Emergency</th>
+                            <th id = "subhead">Isolation</th>
                         </tr>
 
                         {%for i in object%}
