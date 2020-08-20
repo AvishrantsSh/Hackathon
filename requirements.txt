@@ -2,6 +2,6 @@ django
 gunicorn
 django-heroku
 requests
-
+apscheduler
 
 
