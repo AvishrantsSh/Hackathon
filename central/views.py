@@ -17,7 +17,7 @@ class GenStats_View(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(GenStats_View, self).get_context_data(**kwargs)
         obj = covid_stats()
-        context['graph'], context['ttotal'], context['trecover'], context['tdeath'], context['dtotal'], context['drecover'], context['ddeath'] = obj.get_stats()
+        context["time"], context['graph'], context['ttotal'], context['trecover'], context['tdeath'], context['dtotal'], context['drecover'], context['ddeath'] = obj.get_stats()
         return context       
 
 class H_Details(generic.DetailView):
