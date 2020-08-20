@@ -7,6 +7,7 @@ class covid_stats(object):
     def __init__(self):
         self.link = "https://testplotly.herokuapp.com/getstats/general/covid/plotly/data.json"
         # self.link='http://192.168.43.15:8000/getstats/general/covid/plotly/data.json'
+    
     def get_stats(self):
         module_dir = os.path.dirname(__file__)  
         file_path = os.path.join(module_dir, 'temp.json')
