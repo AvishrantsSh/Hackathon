@@ -6,10 +6,14 @@ from os import path
 from datetime import datetime
 sched = BlockingScheduler()
 
-@sched.scheduled_job('interval', hours=2)
+@sched.scheduled_job('interval', minutes=1)
 def timed_job():
-    print('Running scheduled Job')
-    obj = covid_stats()
-    obj.get_data()
+    try:
+        print('Running scheduled Job')
+        obj = covid_stats()
+        obj.get_data()
+        print("Job Completed Successfully")
 
+    except:
+        print("Something went wrong")
 sched.start()
