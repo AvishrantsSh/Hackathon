@@ -24,8 +24,8 @@ class covid_stats(object):
     def get_data(self):
         module_dir = os.path.dirname(__file__)  
         file_path = os.path.join(module_dir, 'temp.json')
-        fobj = open(file_path, "w")
         response = requests.get(url = self.link)
+        fobj = open(file_path, "w")
         fobj.write(str(response.text))
         fobj.truncate()
         fobj.close()

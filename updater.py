@@ -5,7 +5,7 @@ from os import path
 from datetime import datetime
 sched = BlockingScheduler()
 
-@sched.scheduled_job('interval', seconds=20)
+@sched.scheduled_job('interval', minutes=1)
 def timed_job():
     # try:
     print('Running scheduled Job')
@@ -18,7 +18,9 @@ def timed_job():
     fobj.truncate()
     fobj.close()
     print("Job Completed Successfully")
-
+    fobj = open(file_path, 'r+')
+    print(fobj.readlines())
+    fobj.close()
     # except:
     #     print("Something went wrong")
 sched.start()
