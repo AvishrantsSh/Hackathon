@@ -18,6 +18,9 @@ def timed_job():
         fobj.truncate()
         fobj.close()
         print("Job Completed Successfully")
+        fobj = open(file_path, 'r+')
+        print(fobj.readlines())
+        fobj.close()
     except:
         print("Something went wrong")
 sched.start()
