@@ -127,7 +127,7 @@ def Fetchdata(request):
     
     tmp = ','.join(str(t) for t in tmp)
     cleaned_response = {'Data':tmp}
-    json_file=json.dumps(cleaned_response)
-    return HttpResponse(json_file, content_type="application/json")
+    json_file=json.dumps(cleaned_response, indent=4, sort_keys=True)
+    return HttpResponse(json_file, content_type="text/plain")
 
 # Create your views here.
