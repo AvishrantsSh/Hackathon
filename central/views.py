@@ -115,19 +115,9 @@ def random_gen(request):
 
     return HttpResponseRedirect(reverse('home'))
 
-def Fetchdata(request):
-    records_all = Records.objects.all()
-    record_list = serializers.serialize('json', records_all, fields=('age','b_group','symptoms','medical_history'))
-    data = json.loads(record_list)
-    tmp=[]
-    for d in data:
-        del d['pk']
-        del d['model']
-        tmp.append(d['fields'])
-    
-    tmp = ','.join(str(t) for t in tmp)
-    cleaned_response = {'Data':tmp}
-    json_file=json.dumps(cleaned_response)
-    return HttpResponse(json_file, content_type="application/json")
+class Fetchdata(generic.TemplateView):
+    template_name='data.json'
+    content_type = 'text/plain'
+
 
 # Create your views here.
