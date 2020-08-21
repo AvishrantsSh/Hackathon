@@ -8,6 +8,7 @@ class Hospital_Records(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4)
     name = models.CharField(max_length=20, default='None')
     address = models.TextField()
+    email = models.EmailField(default='test@example.com')
     contact = models.CharField(default='0123456789', max_length=10, validators=[RegexValidator(r'^\d{1,10}$')])
     region = models.CharField(default='', max_length=20)
     country = models.CharField(default='India', max_length=20)

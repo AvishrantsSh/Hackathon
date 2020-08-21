@@ -51,3 +51,7 @@ def address(value):
 @register.filter
 def contact(value):
     return Hospital_Records.objects.get(id=value).contact
+
+@register.filter
+def email(value):
+    return Hospital_Records.objects.get(id=value).email

@@ -71,6 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Hackathon.wsgi.application'
 
+## python3 manage.py makemigrations central
 ## python3 manage.py makemigrations
 ## python3 manage.py migrate
 ##
