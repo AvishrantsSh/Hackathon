@@ -43,3 +43,11 @@ def region(value):
 @register.filter
 def safefont(value):
     return str(value)[:50]
+
+@register.filter
+def address(value):
+    return Hospital_Records.objects.get(id=value).address
+    
+@register.filter
+def contact(value):
+    return Hospital_Records.objects.get(id=value).contact
