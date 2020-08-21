@@ -1,5 +1,9 @@
 from django.db import models
 from uuid import uuid4
+from django.dispatch import receiver
+from django.urls import reverse
+
+
 class Hospital_Records(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4)
     name = models.CharField(max_length=20, default='None')
@@ -24,5 +28,18 @@ class Records(models.Model):
     symptoms = models.CharField(max_length=100, default='[]')
     medical_history = models.CharField(max_length=100, default='[]')
 
-   
+class Inventory_Mng(models.Model):
+    choice = [
+        ("Pending","Pending"),
+        ("Solved","Solved")
+    ]
+    sender = models.UUIDField()
+    date = models.DateField()
+    message = models.TextField(max_length=200)
+    status = models.CharField(default="Pending", choices=choice, max_length=10)
+    def get_absolute_url(self): # new
+        return reverse('home')
+    
+    def __str__(self):
+        return self.message[:50]
     # Create your models here.

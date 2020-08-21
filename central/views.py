@@ -1,13 +1,14 @@
 from django.shortcuts import render, reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
-from .models import Hospital_Records, Records
+from .models import Hospital_Records, Records, Inventory_Mng
 from django.views import generic
 from django.core import serializers
 import json, random
 from central.stats import covid_stats
 from django.contrib.auth import get_user_model
 User=get_user_model()
+from datetime import date
 
 class GenStats_View(generic.TemplateView):
     model = Records
@@ -51,6 +52,21 @@ class AllRecords(generic.ListView):
     model = Hospital_Records
     template_name = 'all_records.html'
     context_object_name = 'object'
+
+class Add_Request(generic.CreateView):
+    model=Inventory_Mng
+    fields=['message']
+    template_name='add_request.html'
+
+    def form_valid(self,form):
+        form.instance.sender = Hospital_Records.objects.get(name=self.request.user.username).id
+        form.instance.date = date.today()
+        return super(Add_Request, self).form_valid(form)
+
+class All_Requests(generic.ListView):
+    model=Inventory_Mng
+    template_name='all_requests.html'
+    context_object_name = "object"
 
 @csrf_exempt
 def newdt(request):

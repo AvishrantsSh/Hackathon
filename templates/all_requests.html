@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+{%load customfilter%}
+{%load static%}
+
+{%block title%}
+    Hospital Details
+{%endblock title%}
+
+{%block link%}
+    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.5">
+{%endblock link%}
+{%block content%}
+    {%if object%}
+    <table border="1">
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                Region
+            </td>
+            <td>
+                Request
+            </td>
+            <td>
+                Requested_On
+            </td>
+            <td>
+                Status
+            </td>
+        </tr>   
+        {%for i in object%}
+        
+            <tr>
+                <td>
+                    {{i.sender|safe}}
+                </td>
+                <td>
+                    {{i.sender|region}}
+                </td>
+                <td>
+                    {{i.message}}
+                </td>
+                <td>
+                    {{i.date}}
+                </td>
+                <td>
+                    {{i.status}}
+                </td>
+            </tr>
+        {%endfor%}
+    </table>
+    {%else%}
+        All Clear. Nothing to show
+    {%endif%}
+{%endblock content%}

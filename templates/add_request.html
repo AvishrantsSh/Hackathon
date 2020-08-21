@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+    Add_Request
+{%endblock title%}
+{%block link%}
+
+{%endblock link%}
+
+{%block content%}
+Briefly Describe your requirement (100 words max).
+<form method="post">
+    {% csrf_token %}
+        {%for i in form%}
+            {{i.label_tag}}
+            <br>
+            {{i}}
+            <br>
+        {%endfor%}
+  
+    <input type="submit" value="Submit" />
+</form>
+{%endblock content%}

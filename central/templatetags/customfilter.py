@@ -1,6 +1,6 @@
 from django import template
 from django.contrib.auth import get_user_model
-
+from central.models import Hospital_Records
 register = template.Library()
 
 @register.filter
@@ -31,3 +31,11 @@ def blood(value):
     
     except:
         return None
+
+@register.filter
+def safe(value):
+    return Hospital_Records.objects.get(id=value).name
+
+@register.filter
+def region(value):
+    return Hospital_Records.objects.get(id=value).region

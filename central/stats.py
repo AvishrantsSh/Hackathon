@@ -15,9 +15,13 @@ class covid_stats(object):
         if not fobj.read(1):
             fobj.close()
             self.get_data()
-
+        
         fobj = open(file_path, "r+")
         jobj = dict(json.loads(fobj.read()))
+        self.today = date.today()
+        if str(jobj["Date"]) != str(self.today):
+            self.get_data()
+
         fobj.close()
         return jobj["Time"], jobj["Data"], jobj["TTotal"],jobj["TRecovered"],jobj["TDeceased"],jobj["DTotal"],jobj["DRecovered"],jobj["DDeceased"]
 
