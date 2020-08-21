@@ -51,7 +51,6 @@ class Details_change(generic.UpdateView):
 class AllRecords(generic.ListView):
     model = Hospital_Records
     template_name = 'all_records.html'
-    context_object_name = 'object'
 
 class Add_Request(generic.CreateView):
     model=Inventory_Mng
@@ -67,6 +66,13 @@ class All_Requests(generic.ListView):
     model=Inventory_Mng
     template_name='all_requests.html'
     context_object_name = "object"
+
+class ReqDetailView(generic.DetailView):
+    model = Inventory_Mng
+    template_name = 'view_req.html'
+    
+    def get_object(self):
+        return Inventory_Mng.objects.get(uuid=self.kwargs['pk'])
 
 @csrf_exempt
 def newdt(request):

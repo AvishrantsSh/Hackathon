@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%load customfilter%}
+{%load static%}
+
+{%block title%}
+    Hospital Details
+{%endblock title%}
+
+{%block link%}
+    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.5">
+{%endblock link%}
+{%block content%}
+    {%if object%}
+        Sender : {{object.sender|safe}}<br>
+        Requested On : {{object.date}}<br>
+        Message : {{object.message}}<br>
+    {%else%}
+        All Clear. Nothing to show
+    {%endif%}
+{%endblock content%}

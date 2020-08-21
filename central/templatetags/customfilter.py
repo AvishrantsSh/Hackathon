@@ -39,3 +39,7 @@ def safe(value):
 @register.filter
 def region(value):
     return Hospital_Records.objects.get(id=value).region
+
+@register.filter
+def safefont(value):
+    return str(value)[:50]

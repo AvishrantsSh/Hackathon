@@ -29,6 +29,7 @@ class Records(models.Model):
     medical_history = models.CharField(max_length=100, default='[]')
 
 class Inventory_Mng(models.Model):
+    uuid = models.UUIDField(default=uuid4)
     choice = [
         ("Pending","Pending"),
         ("Solved","Solved")
@@ -41,5 +42,5 @@ class Inventory_Mng(models.Model):
         return reverse('home')
     
     def __str__(self):
-        return self.message[:50]
+        return str(self.message)[:50]
     # Create your models here.

@@ -30,24 +30,25 @@
             </td>
         </tr>   
         {%for i in object%}
-        
-            <tr>
-                <td>
-                    {{i.sender|safe}}
-                </td>
-                <td>
-                    {{i.sender|region}}
-                </td>
-                <td>
-                    {{i.message}}
-                </td>
-                <td>
-                    {{i.date}}
-                </td>
-                <td>
-                    {{i.status}}
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        {{i.sender|safe}}
+                    </td>
+                    <td>
+                        {{i.sender|region}}
+                    </td>
+                    <td>
+                        <a href="{%url 'req_detail' i.uuid %}">
+                            {{i.message|safefont}}
+                        </a>
+                    </td>
+                    <td>
+                        {{i.date}}
+                    </td>
+                    <td>
+                        {{i.status}}
+                    </td>
+                </tr>
         {%endfor%}
     </table>
     {%else%}
