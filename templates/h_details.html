@@ -7,7 +7,7 @@
 {%endblock title%}
 
 {%block link%}
-    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.5">
+    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.6">
 {%endblock link%}
 
 {%block content%}
@@ -93,8 +93,9 @@
 				{%endwith%}
 
 			</table>
-		</div>
-
+		</div>		
+	
+		<div id="bottom">
 		<div id="right_dash">
 
 			<h3 id="second_head">
@@ -108,14 +109,18 @@
 				{%with a=object.blood|blood%} 
 				{% for type, units in a.items%}
 					<tr>
-						<td id="dynamic_left"> {{type}}:</td>	<td id="dynamic_right">{{units}}</td>			
+						<td id="dynamic_left"> {{type}}:</td>
+					</tr>
+				{%endfor%}
+				{% for type, units in a.items%}
+					<tr>
+						<td id="dynamic_right">{{units}}</td>			
 					</tr>
 				{%endfor%}
 				{%endwith%}
 			</table>
-		</div>
-
-		
+		</div>		
+	</div>
 	</div>
 
 	<div id = "link_container">

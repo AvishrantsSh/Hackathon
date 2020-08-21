@@ -6,21 +6,24 @@
 
 #main_head{
 	font-family: overpass;
-	font-size: 3.5vh;
+	font-size: 4vh;
 	margin:0;
 }
 
 #second_head{
 	font-family: overpass;
-	font-size: 2.8vh;
+	font-size: 3.5vh;
 	margin:0;
 }
 
 #dash_container{
-	margin-top: 3vh;
 	display: grid;
 	padding-left: 3vw;
 	padding-bottom: 3vh;
+	padding-top: 3vh;
+	font-size: 2.8vh;
+    transition: 0.3s;
+    border-radius: 20px;
 }
 
 #left_dash{
@@ -31,8 +34,12 @@
 	grid-column: 2;
 }
 
+#bottom{
+	display: block;
+}
+
 #right_dash{
-	grid-column: 3;
+	padding-top: 3vh;
 }
 
 #heading_container{
@@ -46,10 +53,86 @@
 	text-align: center;
 }
 
+#basic, #dynamic, #blood_bank{
+	padding-left: 2vh;
+}
+
+#dash_container:hover{
+	background-color: rgba(137,0,110,0.2);
+}
+
+#basic:hover, #dynamic:hover, #blood_bank:hover{
+	background-color: rgba(207,0,6,0.4);
+	border-radius: 10px;
+    transition: 0.5s;
+
+}
+
 #edit{
 	text-decoration: underline;
 }
+/*################################################*/
 
+#add_request{
+    text-align: center;
+    align-content: center;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.btn {
+	background-color: #ddd;
+	border: none;
+	padding: 16px 32px;
+	font-size: 2.5vh;
+	margin: 4px 2px;
+	transition: 0.4s;
+}
+
+.btn:hover {
+	background-color: rgba(207,0,6,0.6);
+	color: white;
+}
+
+
+
+#table_container{
+  padding: 1vw;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#issuetable{
+	width: 100%;
+    table-layout: fixed;
+    word-break: break-word;
+    border-radius: 10px;
+    border-collapse: collapse;
+    text-align: left;
+    border: 2px solid #ddd; /* Add a grey border */
+}
+
+#view_link:hover{
+	background-color: rgba(137,0,110,0.2);
+	transition: 0.5s;
+}
+
+tr{
+  border-bottom: 1px solid grey;
+}
+
+#issuetable tr.theader{
+    background-color: rgba(207,0,6,0.65);
+    color: white;
+}
+
+th{
+	padding: 1vh;
+	text-align: center;
+}
+
+/*##########################################*/
 
 @media only screen and (max-width: 768px) {
 
@@ -67,6 +150,12 @@
 
 	#dynamic, #basic, #blood_bank{
 		padding-left: 3vh;
+	}
+
+
+
+	#table_container{
+		padding: 0;
 	}
 }
 

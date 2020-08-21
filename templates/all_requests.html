@@ -7,51 +7,63 @@
 {%endblock title%}
 
 {%block link%}
-    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.5">
+    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.6">
 {%endblock link%}
 {%block content%}
-    {%if object%}
-    <table border="1">
-        <tr>
-            <td>
-                Name
-            </td>
-            <td>
-                Region
-            </td>
-            <td>
-                Request
-            </td>
-            <td>
-                Requested_On
-            </td>
-            <td>
-                Status
-            </td>
-        </tr>   
-        {%for i in object%}
-                <tr>
-                    <td>
-                        {{i.sender|safe}}
-                    </td>
-                    <td>
-                        {{i.sender|region}}
-                    </td>
-                    <td>
-                        <a href="{%url 'req_detail' i.uuid %}">
-                            {{i.message|safefont}}
-                        </a>
-                    </td>
-                    <td>
-                        {{i.date}}
-                    </td>
-                    <td>
-                        {{i.status}}
-                    </td>
-                </tr>
-        {%endfor%}
-    </table>
-    {%else%}
-        All Clear. Nothing to show
-    {%endif%}
+    
+    <div id="add_request">
+    <a href="{%url 'add_req'%}"> <div class="btn">Add Request </div></a>
+    </div>
+
+
+    <div id="table_container">
+
+        {%if object%}
+        <table id="issuetable"  border="1">
+            <tr class="theader">
+                <th style="width:26%;">
+                    Name
+                </th>
+                <th style="width:14%;">
+                    Region
+                </th>
+                <th style="width:36%;">
+                    Request
+                </th>
+                <th>
+                    Req. On
+                </th>
+                <th>
+                    Status
+                </th>
+            </tr>   
+            {%for i in object%}
+                    <tr>
+                        <td>
+                            {{i.sender|safe}}
+                        </td>
+                        <td>
+                            {{i.sender|region}}
+                        </td>
+                        <td>
+                            <div id="view_link">
+                                <a href="{%url 'req_detail' i.uuid %}">
+                                    {{i.message|safefont}}
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            {{i.date}}
+                        </td>
+                        <td>
+                            {{i.status}}
+                        </td>
+                    </tr>
+            {%endfor%}
+        </table>
+        {%else%}
+            All Clear. Nothing to show
+        {%endif%}
+    </div>
+
 {%endblock content%}
