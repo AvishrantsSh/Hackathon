@@ -51,6 +51,7 @@ class Details_change(generic.UpdateView):
 class AllRecords(generic.ListView):
     model = Hospital_Records
     template_name = 'all_records.html'
+    context_object_name = 'object'
 
 class Add_Request(generic.CreateView):
     model=Inventory_Mng
@@ -131,7 +132,7 @@ def random_gen(request):
                                     ).save()
             
         for i in range(100):
-            Records.objects.create(age=random.randrange(18,78), b_group="B+", symptoms="Bahut,dard,hai", medical_history="Bahut,dard,thi")
+            Records.objects.create(age=random.randrange(18,78), b_group="B+", symptoms="X,Y,Z", medical_history="A,B,C")
         
         return HttpResponseRedirect(reverse('home'))
 
