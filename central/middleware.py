@@ -17,7 +17,8 @@ EXEMPT_URLS = ("/",
                 '/generate/',
                 "/manifest.json",
                 "/serviceworker.js",
-                "/robots.txt"
+                "/robots.txt",
+                '/admin/',
                 )
 
 SUPER_URLS = ("manage","detail")

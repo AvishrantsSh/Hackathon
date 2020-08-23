@@ -1,9 +1,4 @@
 
-#mbody{
-	background: linear-gradient(180deg, rgba(207,0,6,0.1) 0%, rgba(137,0,110,0.2) 40%, rgba(75,0,102,0.2) 100%);
-
-}
-
 #text{
 	padding-left: 3vw;
 }
@@ -60,10 +55,6 @@
 }
 #basic, #dynamic, #blood_bank{
 	padding-left: 2vh;
-}
-
-#dash_container:hover{
-	background-color: rgba(137,0,110,0.2);
 }
 
 #basic:hover, #dynamic:hover, #blood_bank:hover{
@@ -152,7 +143,7 @@ th{
 	text-align: center;
 }
 #b_unit{
-	width: auto;
+	width: 12%;
 }
 /*##########################################*/
 
