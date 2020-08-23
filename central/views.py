@@ -124,7 +124,7 @@ def newdt(request):
 def random_gen(request):
     if request.method == 'POST':
         for i in range (10):
-            Hospital_Records.objects.create(name = chr(i+65), address=chr(i+97), bed_capacity=','.join(str(i) for i in [random.randrange(50,200,10),random.randrange(50,200,10),random.randrange(50,200,10)]), blood=[50,100,23,56,213,67,36,67])
+            Hospital_Records.objects.create(name = chr(i+65), address=chr(i+97), bed_capacity=','.join(str(i) for i in [random.randrange(50,200,10),random.randrange(50,200,10),random.randrange(50,200,10)]), blood='50,100,23,56,213,67,36,67')
             User.objects.create_user(
                                         username= chr(i+65),
                                         email= 'sample@email.co.uk',
