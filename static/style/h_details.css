@@ -5,13 +5,11 @@
 }
 
 #main_head{
-	font-family: overpass;
 	font-size: 4vh;
 	margin:0;
 }
 
 #second_head{
-	font-family: overpass;
 	font-size: 3.5vh;
 	margin:0;
 }
@@ -53,6 +51,9 @@
 	text-align: center;
 }
 
+#blood_bank{
+	width: 100%;
+}
 #basic, #dynamic, #blood_bank{
 	padding-left: 2vh;
 }
@@ -71,7 +72,6 @@
 #edit{
 	text-decoration: underline;
 }
-/*################################################*/
 
 #add_request{
     text-align: center;
@@ -93,8 +93,6 @@
 	background-color: rgba(207,0,6,0.6);
 	color: white;
 }
-
-
 
 #table_container{
   padding: 1vw;
@@ -131,7 +129,9 @@ th{
 	padding: 1vh;
 	text-align: center;
 }
-
+#b_unit{
+	width: auto;
+}
 /*##########################################*/
 
 @media only screen and (max-width: 768px) {

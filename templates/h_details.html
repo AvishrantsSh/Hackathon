@@ -18,115 +18,116 @@
 		Institution Dashboard
 		</h3>
 	</div>
-
-	<div id = "dash_container">
-		<div id = "left_dash">
-			<h3 id="second_head">
-			Basic Info
-			</h3>
-			<table id="basic">
-				
-				<tr>
-					<td id="basic_left"> Name of Hospital: </td> <td id="basic_right">{{object.name}}</td>	
-				</tr>
-
-				<tr>
-					<td id="basic_left"> Address: </td>	<td id="basic_right">{{object.address}}</td>		
-				</tr>
-				<tr>
-					<td id="basic_left"> Email: </td>	<td id="basic_right">{{object.email}}</td>		
-				</tr>
-				<tr>
-					<td id="basic_left"> Contact Info: </td>	<td id="basic_right">{{object.contact}}</td>		
-				</tr>
-				<tr>
-					<td id="basic_left"> Country: </td> <td id="basic_right"> {{object.country}}</td>	
-				</tr>
-
-				<tr> <td> <br> </td></tr>
-
-				<tr>
-					<td id="basic_left"> Total Bed Capacity: </td> 
-				</tr>
-
-				{%with a=object.bed_capacity|bed%} 
-				{% for type, units in a.items%}
+	{%if object%}
+		<div id = "dash_container">
+			<div id = "left_dash">
+				<h3 id="second_head">
+				Basic Info
+				</h3>
+				<table id="basic">
+					
 					<tr>
-						<td id="basic_left"> {{type}}:</td>	<td id="basic_right">{{units}}</td>			
+						<td id="basic_left"> Name of Hospital: </td> <td id="basic_right">{{object.name}}</td>	
 					</tr>
-				{%endfor%}
-				{%endwith%}
+
+					<tr>
+						<td id="basic_left"> Address: </td>	<td id="basic_right">{{object.address}}</td>		
+					</tr>
+					<tr>
+						<td id="basic_left"> Email: </td>	<td id="basic_right">{{object.email}}</td>		
+					</tr>
+					<tr>
+						<td id="basic_left"> Contact Info: </td>	<td id="basic_right">{{object.contact}}</td>		
+					</tr>
+					<tr>
+						<td id="basic_left"> Country: </td> <td id="basic_right"> {{object.country}}</td>	
+					</tr>
+
+					<tr> <td> <br> </td></tr>
+
+					<tr>
+						<td id="basic_left"> Total Bed Capacity: </td> 
+					</tr>
+
+					{%with a=object.bed_capacity|bed%} 
+					{% for type, units in a.items%}
+						<tr>
+							<td id="basic_left"> {{type}}:</td>	<td id="basic_right">{{units}}</td>			
+						</tr>
+					{%endfor%}
+					{%endwith%}
 
 
-			</table>
+				</table>
 
+			</div>
+			<div id = "center_dash">
+				<h3 id="second_head">
+				Dynamic Info
+				</h3>
+
+				<table id="dynamic">
+					
+					<tr>
+						<td id="dynamic_left">Ventilators Available: </td> <td id="dynamic_right">{{object.ventilator}}</td>	
+					</tr>
+
+					<tr> <td> <br></td></tr>
+					
+					<tr>
+						<td id="dynamic_left">PPE Kits: </td>	<td id="dynamic_right">{{object.ppe}}</td>		
+					</tr>
+
+					<tr> <td> <br></td></tr>
+
+					<tr>
+						<td id="dynamic_left"> Available Beds: </td> 
+					</tr>
+
+					{%with a=object.available|bed%} 
+					{% for type, units in a.items%}
+						<tr>
+							<td id="dynamic_left"> {{type}}:</td>	<td id="dynamic_right">{{units}}</td>			
+						</tr>
+					{%endfor%}
+					{%endwith%}
+
+				</table>
+			</div>		
+		
+			<div id="bottom">
+			<div id="right_dash">
+
+				<h3 id="second_head">
+					Blood Bank Status
+				</h3>
+
+				<table id="blood_bank">
+					<caption style="text-align: left; padding:2vh;">Blood Units:</caption>
+						
+					{%with a=object.blood|blood%} 
+						<tr style="border-bottom: 10px black solid;">
+							{% for type, units in a.items%}
+								<td id="b_unit"> {{type}}</td>
+							{%endfor%}
+
+						</tr>
+						<tr>
+							{% for type, units in a.items%}
+								<td>{{units}}</td>		
+							{%endfor%}
+		
+						</tr>
+					{%endwith%}
+				</table>
+			</div>		
 		</div>
-		<div id = "center_dash">
-			<h3 id="second_head">
-			Dynamic Info
-			</h3>
+		</div>
 
-			<table id="dynamic">
-				
-				<tr>
-					<td id="dynamic_left">Ventilators Available: </td> <td id="dynamic_right">{{object.ventilator}}</td>	
-				</tr>
-
-				<tr> <td> <br></td></tr>
-				
-				<tr>
-					<td id="dynamic_left">PPE Kits: </td>	<td id="dynamic_right">{{object.ppe}}</td>		
-				</tr>
-
-				<tr> <td> <br></td></tr>
-
-				<tr>
-					<td id="dynamic_left"> Available Beds: </td> 
-				</tr>
-
-				{%with a=object.available|bed%} 
-				{% for type, units in a.items%}
-					<tr>
-						<td id="dynamic_left"> {{type}}:</td>	<td id="dynamic_right">{{units}}</td>			
-					</tr>
-				{%endfor%}
-				{%endwith%}
-
-			</table>
-		</div>		
-	
-		<div id="bottom">
-		<div id="right_dash">
-
-			<h3 id="second_head">
-				Blood Bank Status
-			</h3>
-
-			<table id="blood_bank">
-				<tr>
-					<td id="dynamic_left"> Blood Units: </td> <td> (Almost Real-time)</td> 
-				</tr>
-				{%with a=object.blood|blood%} 
-				{% for type, units in a.items%}
-					<tr>
-						<td id="dynamic_left"> {{type}}:</td>
-					</tr>
-				{%endfor%}
-				{% for type, units in a.items%}
-					<tr>
-						<td id="dynamic_right">{{units}}</td>			
-					</tr>
-				{%endfor%}
-				{%endwith%}
-			</table>
-		</div>		
-	</div>
-	</div>
-
-	<div id = "link_container">
-		<br>
-		<a id = "edit" href="{%url 'change'%}">Change Data</a>
-	</div>
-
+		<div id = "link_container">
+			<br>
+			<a id = "edit" href="{%url 'change'%}">Change Data</a>
+		</div>
+	{%endif%}
 </div>
 {%endblock content%}

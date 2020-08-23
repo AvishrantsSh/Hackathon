@@ -31,13 +31,13 @@ tr{
     color: white;
 }
 
-  #issuetable tr.tsubhead{
+#issuetable tr.tsubhead, #issuetable tr.tsubhead:hover{
   background-color: rgba(207,0,6,0.6) !important;
   color: white;
   font-size: 1.2vw;
 }
 
-#issuetable tr.theader:hover, #issuetable tr.tsubhead:hover{
+#issuetable tr.theader:hover{
     background-color: rgba(207,0,6,0.7);
     font-size: 2.5vh;
   }
@@ -48,7 +48,7 @@ tr{
 }
 
 #issuetable tr:hover {
-    font-size: 2.7vh;
+    font-size: 2.6vh;
     background-color: rgba(137,0,110,0.4);
 }
 

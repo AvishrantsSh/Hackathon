@@ -8,13 +8,11 @@
     box-sizing: border-box;
     display: grid;
     justify-content: center;
-    font-family: 'Thasadith', sans-serif; 
 
 }
 #left_define{
     padding: 3vh;
     font-size: 2.5vw;
-    font-family: 'Thasadith', sans-serif; 
 }
 #imgstyle{
     height: 200px;
