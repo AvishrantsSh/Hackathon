@@ -10,16 +10,25 @@
     <link rel="stylesheet" href="{%static 'style/h_details_change.css'%}">
 {%endblock link%}
 {%block content%}
+
+    <div id = "heading_container">
+        <h3 id = "main_head">
+        Message Details
+        </h3>
+    </div>
+
+    <div id="form_container">
     {%if object%}
         Sender : {{object.sender|safe}}<br>
         Requested On : {{object.date}}<br>
         Message : {{object.message}}<br>
         
-        <h2>Conatct Info</h2>
+        <h3>Contact Info</h3>
         Address : {{object.sender|address}}<br>
         Conatct : {{object.sender|contact}}<br>
         Email : {{object.sender|email}}
     {%else%}
         All Clear. Nothing to show
     {%endif%}
+    </div>
 {%endblock content%}

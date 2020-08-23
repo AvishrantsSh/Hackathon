@@ -8,16 +8,27 @@
 {%endblock link%}
 
 {%block content%}
-Briefly Describe your requirement (100 words max).
-<form method="post">
-    {% csrf_token %}
-        {%for i in form%}
-            {{i.label_tag}}
-            <br>
-            {{i}}
-            <br>
-        {%endfor%}
-  
-    <input type="submit" value="Submit" />
-</form>
+
+<div id="heading_container">
+       <h3 id = "main_head">
+        Add New Request
+        </h3>
+</div>
+
+<div id="form_container">
+    <h3 id="requirement">
+    Please enter the requirement/ issue/ message below (100 words max):
+    </h3>
+    <form method="post">
+        {% csrf_token %}
+            {%for i in form%}
+                {{i.label_tag}}
+                <br>
+                {{i}}
+                <br>
+            {%endfor%}
+      
+        <input type="submit" value="Submit" />
+    </form>
+</div>
 {%endblock content%}
