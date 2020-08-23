@@ -7,7 +7,7 @@
 {%endblock title%}
 
 {%block link%}
-    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.6">
+    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.8">
 {%endblock link%}
 
 {%block content%}
@@ -108,13 +108,13 @@
 					{%with a=object.blood|blood%} 
 						<tr style="border-bottom: 10px black solid;">
 							{% for type, units in a.items%}
-								<td id="b_unit"> {{type}}</td>
+								<td id="b_unit"> {{type}} </td>
 							{%endfor%}
 
 						</tr>
 						<tr>
 							{% for type, units in a.items%}
-								<td>{{units}}</td>		
+								<td>{{units}}</td>	
 							{%endfor%}
 		
 						</tr>

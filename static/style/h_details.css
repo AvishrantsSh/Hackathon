@@ -1,4 +1,8 @@
 
+#mbody{
+	background: linear-gradient(180deg, rgba(207,0,6,0.1) 0%, rgba(137,0,110,0.2) 40%, rgba(75,0,102,0.2) 100%);
+
+}
 
 #text{
 	padding-left: 3vw;
@@ -73,6 +77,16 @@
 	text-decoration: underline;
 }
 
+/*#############################################*/
+
+#head_container{
+	padding-left: 2vh;
+}
+
+#r_head{
+	font-size: 3vh;
+}
+
 #add_request{
     text-align: center;
     align-content: center;
@@ -81,7 +95,7 @@
 }
 
 .btn {
-	background-color: #ddd;
+	background-color: rgba(137,0,110,0.2);
 	border: none;
 	padding: 16px 32px;
 	font-size: 2.5vh;
@@ -97,8 +111,8 @@
 #table_container{
   padding: 1vw;
   text-align: center;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 #issuetable{
@@ -108,7 +122,7 @@
     border-radius: 10px;
     border-collapse: collapse;
     text-align: left;
-    border: 2px solid #ddd; /* Add a grey border */
+    border: 3px outset rgba(207,0,6,0.65);
 }
 
 #view_link:hover{
@@ -123,6 +137,14 @@ tr{
 #issuetable tr.theader{
     background-color: rgba(207,0,6,0.65);
     color: white;
+}
+
+#issuetable td{
+	padding-left: 10px;
+}
+
+#issuetable td:hover{
+	border: 2px outset rgba(207,0,6,0.65);
 }
 
 th{

@@ -70,6 +70,7 @@ a{
     width:100%;
     box-sizing: border-box;
     min-height: 79vh;
+    background: linear-gradient(180deg, rgba(207,0,6,0.2) 0%, rgba(137,0,110,0.3) 40%, rgba(75,0,102,0.3) 100%);
 }
 
 #footer{

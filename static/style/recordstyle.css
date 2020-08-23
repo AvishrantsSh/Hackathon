@@ -1,8 +1,10 @@
 
 #mbody{
-    background-image: url("../images/assets/Hola.svg");
-    background-repeat: no-repeat;
-    background-size: 100vw;
+    background: linear-gradient(180deg, rgba(207,0,6,0.1) 0%, rgba(137,0,110,0.2) 40%, rgba(75,0,102,0.2) 100%);
+}
+
+h2{
+  padding-left: 2vh;
 }
 
 #table_container{
@@ -10,7 +12,6 @@
   text-align: center;
 
 }
-
 
 #issuetable{
     table-layout: fixed;
@@ -41,6 +42,10 @@ tr{
     background-color: rgba(207,0,6,0.7);
     font-size: 2.5vh;
   }
+
+#issuetable td:hover{
+  border: 2px outset rgba(207,0,6,0.65);
+}
 
 #issuetable tr:nth-child(even)
   {
@@ -91,7 +96,6 @@ tr{
 
   #issuetable tr:hover {
     font-size: 1.6vh;
-    background-color: #999 ;
 }
 
   th{
