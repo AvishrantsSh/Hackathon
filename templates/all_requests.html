@@ -7,16 +7,18 @@
 {%endblock title%}
 
 {%block link%}
-    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.7">
+    <link rel="stylesheet" href="{%static 'style/h_details.css'%}">
 {%endblock link%}
 {%block content%}
     
     <div id="head_container">
         <h3 id = "r_head">
-        Requests and Equipment Management Interface
+        Inventory Management Interface
         </h3>
     </div>
-
+    <div id="add_request">
+        <a href="{%url 'add_req'%}"> <div class="btn">Add New Request </div></a>
+    </div>
     <div id="table_container">
 
         {%if object%}
@@ -63,9 +65,6 @@
             {%endfor%}
         </table>
 
-    <div id="add_request">
-        <a href="{%url 'add_req'%}"> <div class="btn">Add New Request </div></a>
-    </div>
         {%else%}
             All Clear. Nothing to show
         {%endif%}

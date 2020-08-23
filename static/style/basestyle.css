@@ -68,8 +68,8 @@ a{
 #mbody{
     padding-top: 3vh;
     width:100%;
+    min-height: 83vh;
     box-sizing: border-box;
-    min-height: 79vh;
 }
 
 #footer{

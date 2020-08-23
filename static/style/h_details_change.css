@@ -1,10 +1,9 @@
-
 textarea, input{
-	background-color: rgba(0,0,0, 0.1);
-	border-radius:10px; 
+    border-radius:1vw; 
 	border-width: 1px;
 	font-size: 2vh;
 	max-width: 80%;
+	margin: 0;
 }
 
 #heading_container{
@@ -17,10 +16,6 @@ textarea, input{
 #main_head{
 	font-size: 3.5vh;
 	margin:0;
-}
-
-#mbody{
-	height: 100%;
 }
 
 #form_container{

@@ -37,7 +37,7 @@ class H_Details(generic.DetailView):
 class Details_change(generic.UpdateView):
     model=Hospital_Records
     template_name='h_details_change.html'
-    fields=['name','address','bed_capacity','ventilator','ppe']
+    fields=['email', 'contact', 'bed_capacity','ventilator','ppe']
     def get_object(self):
         user = self.request.user
         if str(user)!= "AnonymousUser":

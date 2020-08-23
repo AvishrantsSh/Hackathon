@@ -1,36 +1,47 @@
 {%extends 'base.html'%}
 {%load static%}
+{%load customfilter%}
 
 {%block title%}
     Hospital Details
 {%endblock title%}
 
 {%block link%}
-    <link rel="stylesheet" href="{%static 'style/h_details_change.css'%}?v=1.2">
+    <link rel="stylesheet" href="{%static 'style/h_details_change.css'%}">
 {%endblock link%}
 
 {%block content%}
 
 <div id = "heading_container">
 		<h3 id = "main_head">
-		Edit Details
+		Edit Mode
 		</h3>
 </div>
 
 <div id="form_container">
-<form method="post">
-    {% csrf_token %}
-
-
-        {%for i in form%}
-            {{i.label_tag}}
-            <br>
-            {{i}}
-            <br>
-            <br>
-        {%endfor%}
-   
-    <input type="submit" value="Save" />
-</form>
+    <h3>Hospital Details</h3>
+    Insititute Name: {{user.username}}<br>
+    Address : {{user.username|address}}
+    <h3>
+        Dynamic Details
+    </h3>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {%for i in form%}
+                <tr>
+                    <td style="padding: 1vh; width: 20vw;">
+                        {{i.label_tag}}
+                    </td>
+                    <td>
+                        {{i}}
+                    </td>
+                </tr>
+            {%endfor%}
+        </table>
+        <input type="submit" value="Save" />
+    </form>
+    <br>
+    <b>Note : </b> The Bed capacity has to supplied in the format (General, Emergency, Isolation)
 </div>
 {%endblock content%}

@@ -46,7 +46,13 @@ def safefont(value):
 
 @register.filter
 def address(value):
-    return Hospital_Records.objects.get(id=value).address
+    try:
+        return Hospital_Records.objects.get(id=value).address
+    except:
+        try:
+            return Hospital_Records.objects.get(name=value).address
+        except:
+            return "Invalid"
     
 @register.filter
 def contact(value):

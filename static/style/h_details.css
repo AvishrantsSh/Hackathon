@@ -47,7 +47,9 @@
 }
 
 #link_container{
-	text-align: center;
+	text-align: right;
+	padding-right: 5vw;
+	box-sizing: border-box;
 }
 
 #blood_bank{
@@ -59,21 +61,25 @@
 	border: 2px solid rgba(207,0,6,0.3) ;
 }
 
-#basic, #dynamic, {
+#basic, #dynamic{
 	padding-left: 2vh;
 }
 
-#basic:hover, #dynamic:hover, #blood_bank:hover{
+#basic:hover, #dynamic:hover{
 	background-color: rgba(207,0,6,0.4);
 	border-radius: 10px;
     transition: 0.5s;
 
 }
-
 #edit{
-	text-decoration: underline;
+	transition: font-size 0.1s;
 }
-
+#edit:hover{
+	font-size: 2.1vh;
+}
+td{
+	padding:1vh;
+}
 #b_unit{
 	padding: 0vh;
 	text-align: left;
@@ -90,19 +96,19 @@
 
 #r_head{
 	font-size: 3vh;
+	margin: 0;
 }
 
 #add_request{
     text-align: center;
-    align-content: center;
-    padding-left: 30%;
-    padding-right: 30%;
+    padding-left: 35%;
+    padding-right: 35%;
 }
 
 .btn {
 	background-color: rgba(137,0,110,0.2);
 	border: none;
-	padding: 16px 32px;
+	padding: 5px 10px;
 	font-size: 2.5vh;
 	margin: 4px 2px;
 	transition: 0.4s;

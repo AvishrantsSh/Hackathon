@@ -7,7 +7,7 @@
 {%endblock title%}
 
 {%block link%}
-    <link rel="stylesheet" href="{%static 'style/h_details.css'%}?v=1.8">
+    <link rel="stylesheet" href="{%static 'style/h_details.css'%}">
 {%endblock link%}
 
 {%block content%}
@@ -17,6 +17,9 @@
 		<h3 id = "main_head">
 		Institution Dashboard
 		</h3>
+		<div id = "link_container">
+			<a id = "edit" href="{%url 'change'%}">Change Data</a>
+		</div>
 	</div>
 	{%if object%}
 		<div id = "dash_container">
@@ -108,15 +111,13 @@
 					{%with a=object.blood|blood%} 
 						<tr style="border-bottom: 10px black solid;">
 							{% for type, units in a.items%}
-								<th id="b_unit"> {{type}} </th>>
+								<th id="b_unit"> {{type}} </th>
 							{%endfor%}
-
 						</tr>
 						<tr>
 							{% for type, units in a.items%}
 								<td>{{units}}</td>	
 							{%endfor%}
-		
 						</tr>
 					{%endwith%}
 				</table>
@@ -124,10 +125,7 @@
 		</div>
 		</div>
 
-		<div id = "link_container">
-			<br>
-			<a id = "edit" href="{%url 'change'%}">Change Data</a>
-		</div>
+		
 	{%endif%}
 </div>
 {%endblock content%}
