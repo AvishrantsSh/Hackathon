@@ -53,7 +53,13 @@
 #blood_bank{
 	width: 100%;
 }
-#basic, #dynamic, #blood_bank{
+
+#blood_bank th, #blood_bank td{
+	padding: 1vh;
+	border: 2px solid rgba(207,0,6,0.3) ;
+}
+
+#basic, #dynamic, {
 	padding-left: 2vh;
 }
 
@@ -66,6 +72,14 @@
 
 #edit{
 	text-decoration: underline;
+}
+
+#b_unit{
+	padding: 0vh;
+	text-align: left;
+	width: 12%;
+	background-color: rgba(207,0,6,0.6);
+	color: white;
 }
 
 /*#############################################*/
@@ -142,9 +156,7 @@ th{
 	padding: 1vh;
 	text-align: center;
 }
-#b_unit{
-	width: 12%;
-}
+
 /*##########################################*/
 
 @media only screen and (max-width: 768px) {
